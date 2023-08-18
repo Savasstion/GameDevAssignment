@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Gems
+  - Success
+  - Zombie
+  - Obstacle
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Obstacle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Trees
+    uniqueID: 102993073
+    locked: 0
+  - name: Enemies
+    uniqueID: 2513950779
+    locked: 0
+  - name: Player
+    uniqueID: 485356061
+    locked: 0
+  - name: Items
+    uniqueID: 1996273725
+    locked: 0
+  - name: Obstacle
+    uniqueID: 2897116173
+    locked: 0
+  - name: UI
+    uniqueID: 1075617437
+    locked: 0
+  - name: Text
+    uniqueID: 2631110103
+    locked: 0
