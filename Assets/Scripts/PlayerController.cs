@@ -7,7 +7,14 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Animator animator;
     public Rigidbody2D rg2d;
-    
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        //get the player "Rigidbody2D" component
+        rb = GetComponent<Rigidbody2D>();
+    }
+
 
 
     // Update is called once per frame
@@ -29,10 +36,11 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
         animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
 
-       
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-
-        rg2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
+        rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+        //rg2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
     }
 
     void attack()
