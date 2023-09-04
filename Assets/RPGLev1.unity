@@ -5736,6 +5736,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a0cac79dbb30843ac5197cd01ede2a, type: 3}
+--- !u!1 &1746716850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9091123795332425719, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+  m_PrefabInstance: {fileID: 1569953867911759499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1768488786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5936,6 +5941,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 545213883263795624, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545213883263795624, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
       propertyPath: moveSpeed
       value: 4
       objectReference: {fileID: 0}
@@ -5997,13 +6006,56 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4123484201024158451, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 535091768}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9091123795332425719, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1569953867911759506}
   m_SourcePrefab: {fileID: 100100000, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
 --- !u!4 &1569953867911759500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4123484201024158451, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
   m_PrefabInstance: {fileID: 1569953867911759499}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1569953867911759502 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3917758062454542261, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+  m_PrefabInstance: {fileID: 1569953867911759499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1569953867911759504 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5908024759641333010, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+  m_PrefabInstance: {fileID: 1569953867911759499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1569953867911759506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746716850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c03db7d58956749a13613c17a70f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkPoint: 0
+  atkSpeed: 0
+  hp: 0
+  isInvulnerable: 0
+  aimVector: {x: 0, y: 0}
+  moveSpeed: 4
+  moveDir: {x: 0, y: 0}
+  knockbackModifier: 0
+  isStunned: 0
+  rb: {fileID: 1569953867911759502}
+  dashDistance: 0
+  isInCombat: 0
+  isInMenu: 0
+  maxHP: 0
+  lastChkPointCoord: {x: 0, y: 0}
+  defModifier: 0
+  isAllowedDodge: 0
+  animator: {fileID: 1569953867911759504}
 --- !u!1001 &1802821392301529517
 PrefabInstance:
   m_ObjectHideFlags: 0
