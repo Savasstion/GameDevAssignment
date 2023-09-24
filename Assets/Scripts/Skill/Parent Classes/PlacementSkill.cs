@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlacementSkill : MonoBehaviour
+public abstract class PlacementSkill : Skill
 {
     [SerializeField]
     private int skillPlaced = 0;
@@ -12,13 +12,17 @@ public class PlacementSkill : MonoBehaviour
     private float skillRadius = 30f;
     [SerializeField]
     private LayerMask enemyLayerMask;
+    [SerializeField]
+    private Transform mousePos;
 
-    //private List<Collider2D> colliders;
-    private Collider2D[] colliders;
 
-    public void getEnemyCollider() {
-        colliders = Physics2D.OverlapCircleAll(transform.position, skillRadius, enemyLayerMask);
+    public float SkillRadius { get => skillRadius; set => skillRadius = value; }
+
+    public Collider2D[] getEnemyCollider() {
+        return Physics2D.OverlapCircleAll(mousePos.position, skillRadius, enemyLayerMask);
 
     }
+
+  
 
 }
