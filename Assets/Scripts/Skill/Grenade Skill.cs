@@ -1,30 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GrenadeSkill : PlacementSkill
 {
     [SerializeField]
     private Rigidbody2D rb;
+    [SerializeField]
+    private float explosionStrength = 10f;
+    [SerializeField]
+    private bool showGizmos = false;
 
 
 
-
-    public override void castSkill()
+    public override void CastSkill()
     {
         Collider2D[] enemyCollider = getEnemyCollider();
+        Transform posCache;
+
+        Debug.Log(enemyCollider.Length);
+
         for (int i = 0; i < enemyCollider.Length; i++) 
         {
-            rb = enemyCollider[i].GetComponent<Rigidbody2D>();
-            Vector2 toEnemyDir = rb.transform.position - transform.position;
-            float distance = toEnemyDir.magnitude;
+            rb = enemyCollider[i].attachedRigidbody;
 
-            float knockbackDistance = SkillRadius - distance;
+            if (rb != null)
+            {
+                
+                enemyCollider[i].gameObject.GetComponent<MeleeAI>().IsStunned = true;
+                rb.velocity = Vector2.zero;
 
-            rb.AddForce(toEnemyDir.normalized * knockbackDistance, ForceMode2D.Impulse);
+                posCache = rb.transform;
 
+                Vector2 toEnemyDir = posCache.position - SkillPos.position;
+
+
+
+
+                //Debug.Log(knockbackDistance);
+
+                //rb.AddForce(toEnemyDir.normalized * explosionStrength, ForceMode2D.Impulse);
+                rb.AddForce(toEnemyDir.normalized * (SkillRadius - toEnemyDir.magnitude) * explosionStrength, ForceMode2D.Impulse);
+
+
+                Debug.Log((SkillRadius - toEnemyDir.magnitude));
+            }
         }
-        
+
+
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(SkillPos.position, SkillRadius);
 
     }
 }

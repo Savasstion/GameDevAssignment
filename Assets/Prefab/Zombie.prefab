@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2736039690929308228}
   - component: {fileID: 819791637132196509}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: HitCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2725955355627118329}
   - component: {fileID: 3537198318207442610}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AvoidBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ Transform:
   - {fileID: 1822879245863996714}
   - {fileID: 2736039690929308228}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3263198572847493040
 SpriteRenderer:
@@ -239,7 +239,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 75
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -289,9 +289,10 @@ MonoBehaviour:
   - {fileID: 3352599221830667702}
   aiData: {fileID: 8917351059733843637}
   detectionDelay: 0.05
-  speed: 1.5
+  speed: 1
   movementDirectionSolver: {fileID: 3488297309533873067}
   rb2d: {fileID: 8444580454424817888}
+  isStunned: 0
 --- !u!70 &8582118858415916850
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -422,7 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 300523787036309076}
   - component: {fileID: 3488297309533873067}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ContextSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8824496047794307348}
   - component: {fileID: 3352599221830667702}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SeekBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1822879245863996714}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SteeringBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}

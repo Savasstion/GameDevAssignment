@@ -14,7 +14,7 @@ public abstract class Skill : MonoBehaviour
     private bool isUnlock = true;
     [SerializeField]
     private int expCost = 5;
-    public abstract void castSkill();
+    public abstract void CastSkill();
 
 
 }
