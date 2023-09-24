@@ -12,14 +12,13 @@ public abstract class PlacementSkill : Skill
     private float skillRadius = 30f;
     [SerializeField]
     private LayerMask enemyLayerMask;
-    [SerializeField]
-    private Transform mousePos;
+
 
 
     public float SkillRadius { get => skillRadius; set => skillRadius = value; }
 
     public Collider2D[] getEnemyCollider() {
-        return Physics2D.OverlapCircleAll(mousePos.position, skillRadius, enemyLayerMask);
+        return Physics2D.OverlapCircleAll(transform.position, skillRadius, enemyLayerMask);
 
     }
 
