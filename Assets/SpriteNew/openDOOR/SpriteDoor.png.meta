@@ -1,0 +1,1821 @@
+fileFormatVersion: 2
+guid: de359757f28d8d2449b363ec0f4e8cf0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteDoor_0
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 732
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e45aa9280ec064ab626a932e8f3278
+      internalID: -2082485102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_1
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 696
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bd107f210a9cc42bb1b963aca06135
+      internalID: -1279049511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_2
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 726
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093e81307622d434684061ca760210ea
+      internalID: 497190542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_3
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 696
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93d868318995704c882f5a6b561da39
+      internalID: 947019637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_4
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 699
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9b74b05f641c540bc69cd3e5935d46
+      internalID: 705121012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_5
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 576
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db2bc2cd6219834297ace0151b91064
+      internalID: -680356384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_6
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 672
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e8adc019d80d84c872411b7a778227
+      internalID: 1370599880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_7
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 672
+        width: 96
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5359a7abe4b74614ca1c6e368d8fcd0c
+      internalID: 1582027915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_8
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 684
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67e305f393e060488c8fefcc1e50e7b
+      internalID: -693712973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_9
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 681
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c5a7b27e45e1b419e4258b407579e1
+      internalID: 1300299761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_10
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 681
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5832bee5803ee7d49bc708960832be9d
+      internalID: 1195307932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_11
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 681
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b4e2b83ae4e0147afa187e8515897b
+      internalID: -49621111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_12
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 681
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117cefd182ec33e43aba9efadf233048
+      internalID: 1802971735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_13
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 681
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0c635b2483e6f42b7a37a77995c106
+      internalID: -82183864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_14
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 480
+        width: 36
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62439ba30fd30e546a9318e6e51e85f4
+      internalID: 2027564286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 576
+        width: 384
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ffc843d94596345bb8aba2977371ee
+      internalID: -1299233907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_16
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 609
+        width: 87
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8227e757f6737745859ea753ddd238b
+      internalID: -409704706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_17
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 609
+        width: 66
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ade730dd9d36941af9f8af5ce27511
+      internalID: 1597073208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_18
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 624
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca010e33fc44364ca7ed4bd3d047522
+      internalID: -420007087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_19
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 624
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fa3989b06d23b4f86e8075fbaca9bf
+      internalID: -2025067747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_20
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 624
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44eb6f1fa3610d24294bfa6c13511485
+      internalID: 442565925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_21
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 624
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6502667f85e562d49b1ef5925ffa0568
+      internalID: -1545028610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_22
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 636
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f89567acf260847810c24244f1aba2
+      internalID: 1726167751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_23
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 636
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d1ff25911ef7c4984601c059cea877
+      internalID: -931686263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_24
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 636
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14c9ddf8078b8e4bb6aae92cc6ed930
+      internalID: -1327497895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_25
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 636
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033dbb4b806680f409ac1971025a0fc6
+      internalID: 1136337096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_26
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 624
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97e6d0ca1960f147ac544c455623a91
+      internalID: 2131124283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_27
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 438
+        width: 258
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b02eb8adf87a11478ef2f0bfe2eec43
+      internalID: -336810251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_28
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 438
+        width: 258
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8d395613e598d4891f9ebf9cd9a115
+      internalID: 453821967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_29
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 498
+        width: 240
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49832d0e0dbc8234da8cf584966d63ec
+      internalID: 2094974780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_30
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 405
+        width: 519
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41eee66c80f6c424e83d99a8f130ced4
+      internalID: 2071176693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_31
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 480
+        width: 30
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede65effa0f9d5441a7c2a3d5a48820d
+      internalID: -802900356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_32
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 321
+        width: 27
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f42f5946d1f76b49bffc916886303d5
+      internalID: 763827592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_33
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 330
+        width: 33
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2494a6d51f18543bf5d214d8c370d6
+      internalID: -180303349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_34
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 432
+        width: 42
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 424338d36b1999447b2d2cc0e628a281
+      internalID: 1980597255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_35
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 432
+        width: 84
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ae75a994284b445bafc009796ae806
+      internalID: 1149383228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_36
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 435
+        width: 42
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8774aa760f741614da4aeb057dbb74c2
+      internalID: 1811658358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_37
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 294
+        width: 259
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696cf50b475255641b3faa229961d3c3
+      internalID: 1995291694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_38
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 294
+        width: 259
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970d7049f8dade6488bf7724aba981fe
+      internalID: 686067992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_39
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 294
+        width: 258
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2641e2fc3d09944489cafb1d0b5b5824
+      internalID: -1810023527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_40
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 294
+        width: 258
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f48d00c7b390244a414be80d9dd8a3
+      internalID: -2002465865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_41
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 174
+        width: 33
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df420e81edf63542994d89ff8cf31d7
+      internalID: -1648833374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_42
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 315
+        width: 27
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeba9d34cd41aa74ab38d0af5b73ae0a
+      internalID: -2133331667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_43
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 294
+        width: 114
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcf0d4ec1abf22469267176930a026a
+      internalID: -1463088114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_44
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 387
+        width: 126
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f84321f56afd94080297a41f0447a5
+      internalID: -930013809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_45
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 264
+        width: 66
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca663374eb55d0d4e9566a0e3a58be11
+      internalID: -21879785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_46
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 384
+        width: 144
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817cb6794924cc14aa53b32f7d159871
+      internalID: 699903689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_47
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 246
+        width: 21
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eeb559f66b3bdb4fbf7a2f6b5276e5e
+      internalID: -47496405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_48
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 240
+        width: 30
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a3307db8ff0924e9a279d3aa6e4173
+      internalID: -1981633235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_49
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 336
+        width: 144
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e42783e86d205418e26d06cd367f89
+      internalID: -2025316144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_50
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 192
+        width: 42
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d583c02ca7b9d44abf4829309101f4
+      internalID: 697145420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_51
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 150
+        width: 258
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d299a4a898d66a4880a1cdef7cac50a
+      internalID: 337410534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_52
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 30
+        width: 33
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0172cc97eb641c945a7bf1d2b9ab5e62
+      internalID: -2073849460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_53
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 171
+        width: 27
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb9d953938ffcf41886b524ae99a9c1
+      internalID: 12434966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_54
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 150
+        width: 258
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6752817db3ec6014dacbce15cae20e08
+      internalID: -143333232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_55
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 174
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90cb84f34e110aa46af647e459fdaf83
+      internalID: 1930580394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_56
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 150
+        width: 21
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928754e11a3c04b47bd92810d4e0d2bb
+      internalID: -1645061062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_57
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 0
+        width: 36
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49418fc2015422d44b7830c3cb8c8b2b
+      internalID: -940117812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_58
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 0
+        width: 36
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cc8b53359a6654185f961ba20916aa
+      internalID: 125541756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_59
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 96
+        width: 39
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d75d926b91b914e9403aa3740fddcc
+      internalID: -605215492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_60
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 144
+        width: 138
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ba1c2c2c7c4c1488b8601151367743
+      internalID: 953153392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_61
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 42
+        width: 276
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907fd55a34494c94a85f985b0644b08f
+      internalID: -107398588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_62
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 195
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57095b58536e11441b44a37e9eca416c
+      internalID: 846690664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_63
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 192
+        width: 90
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5d49d19cd7dc942814e0845f263e1f
+      internalID: 1854122629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_64
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 6
+        width: 33
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0511d65147928a44d825da0d584c8275
+      internalID: -420677952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_65
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 6
+        width: 51
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2127057793653d499999821d8cda915
+      internalID: 1373812052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_66
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 6
+        width: 33
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f60d876329c77446ac864713213be09
+      internalID: -1588341328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_67
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 6
+        width: 51
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27a55647e58ae540b6e3afa2609d36c
+      internalID: -1532050854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_68
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 6
+        width: 114
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591902e2eed55d14c97af83c25dd70cd
+      internalID: -1193991951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_69
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 6
+        width: 162
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb031f120a765674e93b8d7895d2af8e
+      internalID: -1699481757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_70
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 96
+        width: 138
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02bca21a9feaf64db06436cd668c276
+      internalID: 2121547729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_71
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 0
+        width: 24
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b132f4257241cc45b23fb5898dbb092
+      internalID: -2109157052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_72
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 33
+        width: 39
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f68cb599013dd444961e0e8cd59e3dc
+      internalID: -1229032214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_73
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 57
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336456580f925b74f8ebc48e50c1c751
+      internalID: -1824790751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_74
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 0
+        width: 138
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fbeddb7c8b0b0449dea557b80e293c
+      internalID: 2098263260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_75
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 30
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368f737205105cd44b648e30e57631c7
+      internalID: 1461583757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteDoor_76
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 9
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c4c72153e5bfe4b8a6486177c095d4
+      internalID: 1499733101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteDoor_0: -2082485102
+      SpriteDoor_1: -1279049511
+      SpriteDoor_10: 1195307932
+      SpriteDoor_11: -49621111
+      SpriteDoor_12: 1802971735
+      SpriteDoor_13: -82183864
+      SpriteDoor_14: 2027564286
+      SpriteDoor_15: -1299233907
+      SpriteDoor_16: -409704706
+      SpriteDoor_17: 1597073208
+      SpriteDoor_18: -420007087
+      SpriteDoor_19: -2025067747
+      SpriteDoor_2: 497190542
+      SpriteDoor_20: 442565925
+      SpriteDoor_21: -1545028610
+      SpriteDoor_22: 1726167751
+      SpriteDoor_23: -931686263
+      SpriteDoor_24: -1327497895
+      SpriteDoor_25: 1136337096
+      SpriteDoor_26: 2131124283
+      SpriteDoor_27: -336810251
+      SpriteDoor_28: 453821967
+      SpriteDoor_29: 2094974780
+      SpriteDoor_3: 947019637
+      SpriteDoor_30: 2071176693
+      SpriteDoor_31: -802900356
+      SpriteDoor_32: 763827592
+      SpriteDoor_33: -180303349
+      SpriteDoor_34: 1980597255
+      SpriteDoor_35: 1149383228
+      SpriteDoor_36: 1811658358
+      SpriteDoor_37: 1995291694
+      SpriteDoor_38: 686067992
+      SpriteDoor_39: -1810023527
+      SpriteDoor_4: 705121012
+      SpriteDoor_40: -2002465865
+      SpriteDoor_41: -1648833374
+      SpriteDoor_42: -2133331667
+      SpriteDoor_43: -1463088114
+      SpriteDoor_44: -930013809
+      SpriteDoor_45: -21879785
+      SpriteDoor_46: 699903689
+      SpriteDoor_47: -47496405
+      SpriteDoor_48: -1981633235
+      SpriteDoor_49: -2025316144
+      SpriteDoor_5: -680356384
+      SpriteDoor_50: 697145420
+      SpriteDoor_51: 337410534
+      SpriteDoor_52: -2073849460
+      SpriteDoor_53: 12434966
+      SpriteDoor_54: -143333232
+      SpriteDoor_55: 1930580394
+      SpriteDoor_56: -1645061062
+      SpriteDoor_57: -940117812
+      SpriteDoor_58: 125541756
+      SpriteDoor_59: -605215492
+      SpriteDoor_6: 1370599880
+      SpriteDoor_60: 953153392
+      SpriteDoor_61: -107398588
+      SpriteDoor_62: 846690664
+      SpriteDoor_63: 1854122629
+      SpriteDoor_64: -420677952
+      SpriteDoor_65: 1373812052
+      SpriteDoor_66: -1588341328
+      SpriteDoor_67: -1532050854
+      SpriteDoor_68: -1193991951
+      SpriteDoor_69: -1699481757
+      SpriteDoor_7: 1582027915
+      SpriteDoor_70: 2121547729
+      SpriteDoor_71: -2109157052
+      SpriteDoor_72: -1229032214
+      SpriteDoor_73: -1824790751
+      SpriteDoor_74: 2098263260
+      SpriteDoor_75: 1461583757
+      SpriteDoor_76: 1499733101
+      SpriteDoor_8: -693712973
+      SpriteDoor_9: 1300299761
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
