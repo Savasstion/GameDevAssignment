@@ -13,21 +13,31 @@ public class SkillSystem : MonoBehaviour
     private int skillSlot;
     [SerializeField]
     private static int maxSkillEquipNum = 3;
-    public List<Skill> equippedSkills = new List<Skill>();
+    [SerializeField]
+    public List<Skill> equippedSkills;
+    [SerializeField]
+    private GrenadeSkill grenade;
 
+    private void Start()
+    {
+        equippedSkills.Add(grenade);
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            equippedSkills[0].castSkill();
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            equippedSkills[1].castSkill();
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            equippedSkills[2].castSkill();
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-            equippedSkills[3].castSkill();
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-            equippedSkills[4].castSkill();
+        {
+            Debug.Log("1 Pressed");
+            equippedSkills[0].CastSkill();
+        }
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //    equippedSkills[1].CastSkill();
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //    equippedSkills[2].CastSkill();
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //    equippedSkills[3].CastSkill();
+        //else if (Input.GetKeyDown(KeyCode.Alpha5))
+        //    equippedSkills[4].CastSkill();
     }
 
     public void equipSkill(Skill skill)

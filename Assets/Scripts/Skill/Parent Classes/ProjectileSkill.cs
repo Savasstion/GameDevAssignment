@@ -7,7 +7,7 @@ public class ProjectileSkill : Skill
     [SerializeField]
     private float projectileSpd;
 
-    public override void castSkill()
+    public override void CastSkill()
     {
 
     }

@@ -476,6 +476,65 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6888244, y: 1.0381211}
   m_EdgeRadius: 0
+--- !u!1 &556511518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556511519}
+  - component: {fileID: 556511520}
+  m_Layer: 0
+  m_Name: Grenade Skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &556511519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556511518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1058104899}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556511520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556511518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e115cb6cd45b7439b4c382bcf353a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillCastTime: 0
+  skillCastCost: 1
+  skillCastDelayTime: 0
+  isUnlock: 1
+  expCost: 5
+  skillPlaced: 0
+  maxPlacementAmount: 1
+  skillRadius: 2
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  skillPos: {fileID: 655684258}
+  rb: {fileID: 0}
+  explosionStrength: 200
+  showGizmos: 1
 --- !u!1001 &564876486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1532,6 +1591,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1058104898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058104899}
+  - component: {fileID: 1058104900}
+  m_Layer: 0
+  m_Name: SkillSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058104899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058104898}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.22948283, y: 3.017228, z: -0.082589015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 556511519}
+  m_Father: {fileID: 1569953867911759500}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1058104900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058104898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a36bf7ad5fada0418376df5b8ec7a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoeCursorState: 0
+  aoeCastState: 0
+  skillSlot: 0
+  equippedSkills: []
+  grenade: {fileID: 556511520}
 --- !u!1001 &1253287411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5984,6 +6093,14 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3917758062454542261, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917758062454542261, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917758062454542261, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
@@ -6044,6 +6161,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4123484201024158451, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 519420032}
+    - targetCorrespondingSourceObject: {fileID: 4123484201024158451, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1058104899}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d2f850b0c911f646835bb30372dd09c, type: 3}
 --- !u!4 &1569953867911759500 stripped
