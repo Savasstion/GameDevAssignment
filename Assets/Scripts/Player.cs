@@ -55,12 +55,6 @@ public class Player : Actor
     }
 
 
-
-    public void usePlayerSkill(int skillNum)
-    {
-
-    }
-
     override
     public void enterDefeatState() 
     {
