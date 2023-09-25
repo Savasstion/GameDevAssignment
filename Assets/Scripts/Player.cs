@@ -25,6 +25,8 @@ public class Player : Actor
     private Animator animator;
     [SerializeField]
     private short dashCount = 0, maxDashCount;
+    [SerializeField]
+    private float dashCoolDownTime;
 
 
 
@@ -50,7 +52,7 @@ public class Player : Actor
     {
 
 
-        if ((Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt) && (dashCount <= maxDashCount)) && IsInvulnerable == false)
+        if (Input.GetKeyDown(KeyCode.Space) && (dashCount < maxDashCount) && IsInvulnerable == false)
         { 
 
             CancelInvoke("StartDashCD");
@@ -62,7 +64,7 @@ public class Player : Actor
             dashCount++;
             Debug.Log(dashCount);
             //reset and start dash cooldown timer
-            Invoke("StartDashCD",2);
+            Invoke("StartDashCD", dashCoolDownTime);
 
 
         }

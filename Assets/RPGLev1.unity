@@ -818,7 +818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116, y: -94.100006}
+  m_AnchoredPosition: {x: 116, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697805625
@@ -988,7 +988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556285220517116567, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: maxDashCount
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556285220517116567, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
+      propertyPath: dashCoolDownTime
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9108675271459903759, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: m_Name
@@ -1444,7 +1448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 177.10004, y: -57}
+  m_AnchoredPosition: {x: 177.10004, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254569135
