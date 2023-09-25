@@ -152,7 +152,7 @@ Transform:
   - {fileID: 1822879245863996714}
   - {fileID: 2736039690929308228}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3263198572847493040
 SpriteRenderer:
@@ -302,7 +302,7 @@ MonoBehaviour:
   - {fileID: 3352599221830667702}
   aiData: {fileID: 8917351059733843637}
   detectionDelay: 0.05
-  speed: 1
+  speed: 1.5
   movementDirectionSolver: {fileID: 3488297309533873067}
 --- !u!70 &8582118858415916850
 CapsuleCollider2D:
