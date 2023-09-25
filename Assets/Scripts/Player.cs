@@ -50,7 +50,7 @@ public class Player : Actor
     {
 
 
-        if ((/*Input.GetKeyDown(KeyCode.LeftAlt) ||*/ Input.GetKeyDown(KeyCode.Space) && (dashCount <= maxDashCount)) && IsInvulnerable == false)
+        if ((Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt) && (dashCount <= maxDashCount)) && IsInvulnerable == false)
         { 
 
             CancelInvoke("StartDashCD");
