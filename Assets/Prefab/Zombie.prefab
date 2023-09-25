@@ -152,7 +152,7 @@ Transform:
   - {fileID: 1822879245863996714}
   - {fileID: 2736039690929308228}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3263198572847493040
 SpriteRenderer:
@@ -249,7 +249,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 136
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -281,6 +281,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fb5e5faa15cb44f813317354e9659a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkPoint: 20
+  atkSpeed: 1
+  hp: 100
+  isInvulnerable: 0
+  moveSpeed: 2
+  moveDir: {x: 0, y: 0}
+  isStunned: 0
+  rb: {fileID: 8444580454424817888}
+  dashDistance: 2
+  isHostile: 1
+  isInteractable: 0
+  questID: 0
+  factionID: 0
   detectors:
   - {fileID: 3859616960939197444}
   - {fileID: 595048610179870772}
@@ -291,8 +304,6 @@ MonoBehaviour:
   detectionDelay: 0.05
   speed: 1
   movementDirectionSolver: {fileID: 3488297309533873067}
-  rb2d: {fileID: 8444580454424817888}
-  isStunned: 0
 --- !u!70 &8582118858415916850
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -308,7 +319,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 136
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

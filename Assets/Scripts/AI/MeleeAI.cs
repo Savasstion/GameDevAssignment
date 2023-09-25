@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAI : MonoBehaviour
+public class MeleeAI : Enemy
 {
     [SerializeField]
     private List<Detector> detectors;
@@ -19,18 +19,13 @@ public class MeleeAI : MonoBehaviour
     [SerializeField]
     private ContextSolver movementDirectionSolver;
 
-    [SerializeField]
-    private Rigidbody2D rb2d;
-
-    [SerializeField]
-    private bool isStunned = false;
 
 
-    public bool IsStunned { get => isStunned; set => isStunned = value; }
+    
 
     private void Start()
     {
-        isStunned = false;
+        IsStunned = false;
         InvokeRepeating("PerformDetection", 0, detectionDelay);
     }
 
@@ -54,20 +49,31 @@ public class MeleeAI : MonoBehaviour
         
     }
 
-    private void Move()
+    public override void Move()
     {
-        if (isStunned)
+        if (IsStunned)
         {
 
             Invoke("UnStunned", 0.5f);
             return;
         }
-        rb2d.velocity = movementDirectionSolver.GetDirToMove(steeringBehaviours, aiData) * speed;
+        MoveDir = Rb.velocity = movementDirectionSolver.GetDirToMove(steeringBehaviours, aiData) * speed;
     }
 
-    private void UnStunned() {
-        isStunned = false;
-        rb2d.velocity = Vector2.zero;
-       CancelInvoke("UnStunned");
+
+
+    public override void Attack(Vector2 attackDr, float range)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void AlertAllEnemies()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void UpdateQuest()
+    {
+        throw new System.NotImplementedException();
     }
 }

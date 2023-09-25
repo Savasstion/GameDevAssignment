@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Player : Actor
 {
@@ -17,7 +20,13 @@ public class Player : Actor
     [SerializeField]
     private bool isAllowedDodge;
     [SerializeField]
+    private Transform aimDir;
+    [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private short dashCount = 0, maxDashCount;
+
+
 
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
     public bool IsInMenu { get => isInMenu; set => isInMenu = value; }
@@ -25,48 +34,96 @@ public class Player : Actor
     public Vector2 LastChkPointCoord { get => lastChkPointCoord; set => lastChkPointCoord = value; }
     public float DefModifier { get => defModifier; set => defModifier = value; }
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
+    public Transform AimDir { get => aimDir; set => aimDir = value; }
     public Animator Animator { get => animator; set => animator = value; }
 
 
+    void Start() 
+    {
+    IsInvulnerable = false;
+    }
+    
+ 
+    
     // Update is called once per frame
     void Update()
     {
 
 
+        if ((/*Input.GetKeyDown(KeyCode.LeftAlt) ||*/ Input.GetKeyDown(KeyCode.Space) && (dashCount <= maxDashCount)) && IsInvulnerable == false)
+        { 
 
-        if (Input.GetButtonDown("Attack"))
-        {
+            CancelInvoke("StartDashCD");
 
-            attack(MoveDir, 1);
+            Dash();
+            Debug.Log("Player Dashed");
+            //play animation
+
+            dashCount++;
+            Debug.Log(dashCount);
+            //reset and start dash cooldown timer
+            Invoke("StartDashCD",2);
+
+
+        }
+
+        if (IsInvulnerable)
+        { 
+            Invoke("BecomeVulnerable", 0.5f);
+            return;
+        }
+
+        if (Input.GetButtonDown("Attack") && !IsInvulnerable)
+        {  
+            Attack(MoveDir, 1);
         }
 
     }
+    
 
     private void FixedUpdate()
     {
-        Animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-        Animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
+        Move();
+
+
+
+
+    }
+
+    public override void Move()
+    {
+        if (IsStunned)
+        {
+
+            Invoke("UnStunned", 0.5f);
+            return;
+        }
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Rb.velocity = new Vector2(horizontalInput * MoveSpeed, verticalInput * MoveSpeed);
-        //rg2d.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
+        //uncomment when got animations
+        //Animator.SetFloat("Horizontal", horizontalInput);
+        //Animator.SetFloat("Vertical", verticalInput);
+
+            
+
+        MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
+        Rb.velocity = MoveDir * MoveSpeed;
+        
     }
 
 
-    override
-    public void enterDefeatState() 
-    {
-    
-    }
 
-    override
-    public void attack(Vector2 attackDr, float range) 
+    public override void Attack(Vector2 attackDr, float range) 
     {
         Animator.SetTrigger("Attack");
 
     }
 
-
+    public void StartDashCD()
+    {
+        dashCount = 0;
+        Debug.Log(dashCount);
+    }
 }
