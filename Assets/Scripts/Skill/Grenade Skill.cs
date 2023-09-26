@@ -29,19 +29,18 @@ public class GrenadeSkill : PlacementSkill
             {
                 
                 enemyCollider[i].gameObject.GetComponent<MeleeAI>().IsStunned = true;
-                rb.velocity = Vector2.zero;
+
 
                 posCache = rb.transform;
 
                 Vector2 toEnemyDir = posCache.position - SkillPos.position;
 
 
-
-
                 //Debug.Log(knockbackDistance);
 
+                rb.velocity = Vector2.zero;
                 //rb.AddForce(toEnemyDir.normalized * explosionStrength, ForceMode2D.Impulse);
-                rb.AddForce(toEnemyDir.normalized * (SkillRadius - toEnemyDir.magnitude) * explosionStrength, ForceMode2D.Impulse);
+                rb.AddForce((SkillRadius - toEnemyDir.magnitude) * explosionStrength * toEnemyDir.normalized, ForceMode2D.Impulse);
 
 
                 Debug.Log((SkillRadius - toEnemyDir.magnitude));
