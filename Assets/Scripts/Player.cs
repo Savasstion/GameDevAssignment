@@ -137,6 +137,7 @@ public class Player : Actor
 
 
         animator.SetFloat("playerDir", AimDir.x);
+        animator.SetFloat("xVelocity", Rb.velocity.x);
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
         Rb.velocity = MoveDir * MoveSpeed;
