@@ -20,7 +20,7 @@ public class Player : Actor
     [SerializeField]
     private bool isAllowedDodge;
     [SerializeField]
-    private Transform aimDir;
+    private Vector2 aimDir;
     [SerializeField]
     private Animator animator;
     [SerializeField]
@@ -29,6 +29,7 @@ public class Player : Actor
     private float dashCoolDownTime;
 
     public AudioSource audioSource;
+    public Transform mousePos;
 
     private bool faceRight = true;
 
@@ -38,7 +39,7 @@ public class Player : Actor
     public Vector2 LastChkPointCoord { get => lastChkPointCoord; set => lastChkPointCoord = value; }
     public float DefModifier { get => defModifier; set => defModifier = value; }
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
-    public Transform AimDir { get => aimDir; set => aimDir = value; }
+    public Vector2 AimDir { get => aimDir; set => aimDir = value; }
     public Animator Animator { get => animator; set => animator = value; }
 
 
@@ -52,8 +53,8 @@ public class Player : Actor
     
     // Update is called once per frame
     void Update()
-    {
-
+    { 
+        AimDir = mousePos.position - transform.position;
 
         if (Input.GetKeyDown(KeyCode.Space) && (dashCount < maxDashCount) && IsInvulnerable == false)
         { 
@@ -114,7 +115,8 @@ public class Player : Actor
         
 
         //if looking right and clicked left(flip to the left)
-        if (faceRight && horizontalInput < 0)
+        //if (faceRight && horizontalInput < 0)
+        if(AimDir.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
 
@@ -123,7 +125,8 @@ public class Player : Actor
 
         }
         //if looking left and click right(flip to the right)
-        else if (!faceRight && horizontalInput > 0)
+        //else if (!faceRight && horizontalInput > 0)
+        else if (AimDir.x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
 
@@ -133,7 +136,7 @@ public class Player : Actor
         }
 
 
-        animator.SetFloat("xVelocity", Mathf.Abs(Rb.velocity.x));
+        animator.SetFloat("playerDir", AimDir.x);
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
         Rb.velocity = MoveDir * MoveSpeed;
