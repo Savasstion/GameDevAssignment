@@ -43,6 +43,8 @@ public class Pflipcharacteraction : MonoBehaviour
         
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+
         //if not player using this script "= Input.GetAxisRaw("Horizontal");" must change
         //if enemy use script, i will deal with it
 
