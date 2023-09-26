@@ -30,6 +30,7 @@ public class Player : Actor
 
     public AudioSource audioSource;
 
+    private bool faceRight = true;
 
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
     public bool IsInMenu { get => isInMenu; set => isInMenu = value; }
@@ -108,11 +109,31 @@ public class Player : Actor
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        //uncomment when got animations
-        //Animator.SetFloat("Horizontal", horizontalInput);
-        //Animator.SetFloat("Vertical", verticalInput);
 
-            
+
+        
+
+        //if looking right and clicked left(flip to the left)
+        if (faceRight && horizontalInput < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+
+            faceRight = false;
+
+
+        }
+        //if looking left and click right(flip to the right)
+        else if (!faceRight && horizontalInput > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+
+            faceRight = true;
+
+
+        }
+
+
+        animator.SetFloat("xVelocity", Mathf.Abs(Rb.velocity.x));
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
         Rb.velocity = MoveDir * MoveSpeed;
