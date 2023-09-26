@@ -28,6 +28,7 @@ public class Player : Actor
     [SerializeField]
     private float dashCoolDownTime;
 
+    public AudioSource audioSource;
 
 
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
@@ -42,7 +43,8 @@ public class Player : Actor
 
     void Start() 
     {
-    IsInvulnerable = false;
+        IsInvulnerable = false;
+        //audioSource = GetComponent<AudioSource>();
     }
     
  
@@ -58,6 +60,8 @@ public class Player : Actor
             CancelInvoke("StartDashCD");
 
             Dash();
+            //play sound
+            audioSource.Play();
             Debug.Log("Player Dashed");
             //play animation
 
