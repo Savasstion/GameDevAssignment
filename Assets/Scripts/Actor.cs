@@ -38,7 +38,7 @@ public abstract class Actor : MonoBehaviour
     public abstract void Move();
 
 
-    public void Dash()
+    public void Dash(Vector2 dashDir)
     {
         IsStunned = true;
         //if (gameObject.GetComponent<Actor>().IsStunned)
@@ -46,7 +46,7 @@ public abstract class Actor : MonoBehaviour
         rb.velocity = Vector2.zero;
 
         IsInvulnerable = true;
-        rb.AddForce(MoveDir.normalized * DashDistance, ForceMode2D.Impulse);
+        rb.AddForce(dashDir.normalized * DashDistance, ForceMode2D.Impulse);
 
 
     }
@@ -69,7 +69,7 @@ public abstract class Actor : MonoBehaviour
         transform.position = destination;
     }
 
-    public abstract void Attack(Vector2 aimDir, float atkRange);
+    public abstract void Attack(Vector2 aimDir);
 
     public void ChangeColor(Color color)
     {

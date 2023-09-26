@@ -59,7 +59,7 @@ public class Player : Actor
 
             CancelInvoke("StartDashCD");
 
-            Dash();
+            Dash(MoveDir);
             //play sound
             audioSource.Play();
             Debug.Log("Player Dashed");
@@ -81,7 +81,7 @@ public class Player : Actor
 
         if (Input.GetButtonDown("Attack") && !IsInvulnerable)
         {  
-            Attack(MoveDir, 1);
+            Attack(MoveDir);
         }
 
     }
@@ -121,7 +121,7 @@ public class Player : Actor
 
 
 
-    public override void Attack(Vector2 attackDr, float range) 
+    public override void Attack(Vector2 attackDr) 
     {
         Animator.SetTrigger("Attack");
 

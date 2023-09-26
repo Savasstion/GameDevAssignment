@@ -17,6 +17,8 @@ public class SeekBehaviour : SteeringBehaviour
     private Vector2 targetPositionCached;
     private float[] interestsTemp;
 
+    //public Vector2 TargetPositionCached { get => targetPositionCached; set => targetPositionCached = value; }
+
     public override (float[] danger, float[] interest) GetSteering(float[] danger, float[] interest, AIData aiData)
     {
         //if we no target stop seeking

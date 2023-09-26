@@ -152,7 +152,7 @@ Transform:
   - {fileID: 1822879245863996714}
   - {fileID: 2736039690929308228}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3263198572847493040
 SpriteRenderer:
@@ -246,7 +246,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 136
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 136
@@ -289,9 +289,9 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0}
   isStunned: 0
   rb: {fileID: 8444580454424817888}
-  dashDistance: 2
+  dashDistance: 300
   isHostile: 1
-  isInteractable: 0
+  isInteractable: 1
   questID: 0
   factionID: 0
   detectors:
@@ -304,6 +304,14 @@ MonoBehaviour:
   detectionDelay: 0.05
   speed: 1.5
   movementDirectionSolver: {fileID: 3488297309533873067}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  obstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 72
+  dashToPlayerDistance: 2
+  dodgeCooldown: 2.5
 --- !u!70 &8582118858415916850
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -316,10 +324,10 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 136
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
