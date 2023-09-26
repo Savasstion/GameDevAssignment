@@ -192,7 +192,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  skillPos: {fileID: 0}
+  skillPos: {fileID: 138313963921436574, guid: 7d8c7a6a0e9c8b74ea51a6df73edd3fc, type: 3}
   rb: {fileID: 0}
   explosionStrength: 200
   showGizmos: 1
@@ -442,7 +442,7 @@ Transform:
   - {fileID: 662330610376790930}
   - {fileID: 8686783529126194042}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2768303061064876514
 SpriteRenderer:
