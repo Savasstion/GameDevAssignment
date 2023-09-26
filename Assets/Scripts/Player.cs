@@ -14,7 +14,7 @@ public class Player : Actor
     [SerializeField]
     private int maxHP;
     [SerializeField]
-    private Vector2 lastChkPointCoord;
+    private Transform lastChkPointCoord;
     [SerializeField]
     private float defModifier;
     [SerializeField]
@@ -36,7 +36,7 @@ public class Player : Actor
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
     public bool IsInMenu { get => isInMenu; set => isInMenu = value; }
     public int MaxHP { get => maxHP; set => maxHP = value; }
-    public Vector2 LastChkPointCoord { get => lastChkPointCoord; set => lastChkPointCoord = value; }
+    public Transform LastChkPointCoord { get => lastChkPointCoord; set => lastChkPointCoord = value; }
     public float DefModifier { get => defModifier; set => defModifier = value; }
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
     public Vector2 AimDir { get => aimDir; set => aimDir = value; }
@@ -66,6 +66,7 @@ public class Player : Actor
             audioSource.Play();
             Debug.Log("Player Dashed");
             //play animation
+            Animator.SetTrigger("Dash");
 
             dashCount++;
             Debug.Log(dashCount);
@@ -109,7 +110,7 @@ public class Player : Actor
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-
+        
 
 
         
@@ -135,7 +136,7 @@ public class Player : Actor
 
         }
 
-
+        //line 69 also got animation variable
         animator.SetFloat("playerDir", AimDir.x);
         animator.SetFloat("xVelocity", Rb.velocity.x);
 

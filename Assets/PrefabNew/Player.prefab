@@ -192,7 +192,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  skillPos: {fileID: 138313963921436574, guid: 7d8c7a6a0e9c8b74ea51a6df73edd3fc, type: 3}
+  skillPos: {fileID: 0}
   rb: {fileID: 0}
   explosionStrength: 200
   showGizmos: 1
@@ -442,7 +442,7 @@ Transform:
   - {fileID: 662330610376790930}
   - {fileID: 8686783529126194042}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2768303061064876514
 SpriteRenderer:
@@ -576,8 +576,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.22810316, y: -0.14621997}
-  m_Size: {x: 0.32832944, y: 0.720199}
+  m_Offset: {x: 0, y: -0.19593477}
+  m_Size: {x: 0.32832944, y: 0.32832944}
   m_Direction: 0
 --- !u!114 &7556285220517116567
 MonoBehaviour:
@@ -606,12 +606,13 @@ MonoBehaviour:
   lastChkPointCoord: {x: 0, y: 0}
   defModifier: 1
   isAllowedDodge: 0
-  aimDir: {fileID: 0}
+  aimDir: {x: 0, y: 0}
   animator: {fileID: 7426976953821704167}
   dashCount: 0
   maxDashCount: 2
   dashCoolDownTime: 1.5
   audioSource: {fileID: 1467951013371033103}
+  mousePos: {fileID: 0}
 --- !u!82 &1467951013371033103
 AudioSource:
   m_ObjectHideFlags: 0
