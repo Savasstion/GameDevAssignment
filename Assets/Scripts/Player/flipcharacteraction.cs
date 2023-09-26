@@ -1,19 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pflipcharacteraction : MonoBehaviour
 {
     //DustEffect
-    public ParticleSystem dust;
+
     public Animator animator;
     public Rigidbody2D rb;
 
-    [SerializeField] Collider2D standingCollider;
-    [SerializeField] Transform groundCheckCollider;
-    [SerializeField] Transform ceilingCheckCollider;
-    [SerializeField] LayerMask groundLayer;
-    [SerializeField] private TrailRenderer trailRenderer;
+
 
 
     float horizontalInput;
@@ -44,15 +41,17 @@ public class Pflipcharacteraction : MonoBehaviour
 
         //Store the horizontal value
         
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
 
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        //if not player using this script "= Input.GetAxisRaw("Horizontal");" must change
+        //if enemy use script, i will deal with it
 
 
         //if left shift is clicked,  enable isDashing
         //if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         //{
-         //   StartCoroutine(Dash());
-       // }
+        //   StartCoroutine(Dash());
+        // }
     }
 
     void FixedUpdate()
