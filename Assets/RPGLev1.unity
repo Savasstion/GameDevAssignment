@@ -930,30 +930,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 261307159615514930, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 261307159615514930, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 530358264402624743, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: skillPos
       value: 
       objectReference: {fileID: 655684258}
-    - target: {fileID: 1394475882324320674, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1394475882324320674, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1394475882324320674, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1680443638623858194, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: m_RootOrder
       value: 2
