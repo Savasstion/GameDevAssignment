@@ -12,9 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: GREEN
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: -1797973490, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -1952383275, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: 1317408242, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: 2127363649, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -1253423123, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: 2101729315, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -306381075, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: 879282663, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: 150940104, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: 938408623, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -490700473, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -1727011991, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -332284991, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -351406620, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: -1901139937, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  - {fileID: 1133335766, guid: 6715ee007205fc340b45a6850ff82db2, type: 3}
+  m_MinSpeed: 6
+  m_MaxSpeed: 6
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
