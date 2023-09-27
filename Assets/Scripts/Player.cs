@@ -145,7 +145,7 @@ public class Player : Actor
 
         //line 69 also got animation variable
         animator.SetFloat("playerDir", AimDir.x);
-        animator.SetFloat("xVelocity", Rb.velocity.x);
+        animator.SetInteger("xVelocity", (int)Rb.velocity.x);
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
         Rb.velocity = MoveDir * MoveSpeed;
@@ -162,11 +162,16 @@ public class Player : Actor
 
         //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
 
-        List<Collider2D> enemyColliders = equippedWeapon.AttackCollider.GetComponent<WeaponCollider>().EnemyColliders;
+
+
+        Collider2D[] enemyColliders = equippedWeapon.GetEnemyCollider(mousePos);
+
+        Debug.Log("Enemy layer num = " + LayerMask.NameToLayer("Enemy"));
+        
 
         equippedWeapon.ApplyDamage(enemyColliders, AtkPoint);
         equippedWeapon.ApplyKnockback(enemyColliders);
-
+        
     }
 
     public void StartDashCD()

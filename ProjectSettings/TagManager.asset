@@ -8,6 +8,7 @@ TagManager:
   - Success
   - Zombie
   - Obstacle
+  - EnemyHitbox
   layers:
   - Default
   - TransparentFX

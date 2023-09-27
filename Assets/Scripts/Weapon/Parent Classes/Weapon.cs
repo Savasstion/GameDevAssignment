@@ -12,62 +12,88 @@ public abstract class Weapon : MonoBehaviour
     private bool isMelee;
 
     private ContactFilter2D contactFilter;
+    
 
     public float KnocbackModifier { get => knocbackModifier; set => knocbackModifier = value; }
     public float AtkModifier { get => atkModifier; set => atkModifier = value; }
     public float AtkSpdModifier { get => atkSpdModifier; set => atkSpdModifier = value; }
     public bool IsMelee { get => isMelee; set => isMelee = value; }
-    public GameObject AttackCollider { get => weaponCollider; set => weaponCollider = value; }
+    public GameObject WeaponCollider { get => weaponCollider; set => weaponCollider = value; }
 
     private void Start()
     {
         contactFilter = new ContactFilter2D();
         contactFilter.SetLayerMask(LayerMask.NameToLayer("Enemy"));
+        
     }
 
-    //public List<Collider2D> GetEnemyCollider() 
-    //{
-        
 
-    //    //Physics2D.OverlapCollider(attackCollider, contactFilter, enemyColliders);
-
-    //    Debug.Log("enemyColliders returned");
-    //    return weaponCollider.GetComponent<WeaponCollider>().EnemyColliders;
-    //}
-
-    public void ApplyDamage(List<Collider2D> enemyColliders, float atkPoint) 
+    public Collider2D[] GetEnemyCollider(Transform mouse)
     {
-        for (int i = 0; i < enemyColliders.Count; i++)
+        //List<Collider2D> colliders = new List<Collider2D>();
+        //Collider2D attackCollider = weaponCollider.GetComponent<Collider2D>();
+
+
+        //Physics2D.OverlapCollider(attackCollider, contactFilter, colliders);
+
+        //List<Collider2D> enemyColliders = new List<Collider2D>();  
+        //foreach (Collider2D overlapCollider in colliders)
+        //    enemyColliders.Add(overlapCollider);
+
+
+
+        //Debug.Log("enemyColliders returned");
+        //Debug.Log("Collider amount = " + enemyColliders.Count);
+        //colliders = null;
+
+        //return enemyColliders;
+
+        return Physics2D.OverlapCircleAll(transform.position + (mouse.position.normalized / 3),
+            1);
+    }
+
+    public void ApplyDamage(Collider2D[] enemyColliders, float atkPoint) 
+    {
+        for (int i = 0; i < enemyColliders.Length; i++)
         {
-            if (enemyColliders[i] != null && enemyColliders[i].isTrigger == true)
-            { 
-            enemyColliders[i].gameObject.transform.parent.GetComponent<MeleeAI>().Hp -= (atkModifier * atkPoint);
-            Debug.Log("Applied Damage");
+            //test
+            Destroy(enemyColliders[i].gameObject);
+
+            Debug.Log("enemyColliders[i] layer number = " + enemyColliders[i].gameObject.layer);
+            if (/*enemyColliders[i] != null && */(LayerMask.NameToLayer("Enemy") == enemyColliders[i].gameObject.layer)
+                /*&& enemyColliders[i].gameObject.CompareTag("EnemyHitbox")*/)
+            {
+                enemyColliders[i].gameObject.transform.parent.GetComponent<Actor>().Hp -= (atkModifier * atkPoint);
+
+                Debug.Log("Applied Damage");
+                //enemyColliders[i].gameObject.transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else {
+                Debug.Log("Failed to do damage");
             }
         }
     
     }
 
-    public void ApplyKnockback(List<Collider2D> enemyColliders) 
+    public void ApplyKnockback(Collider2D[] enemyColliders) 
     {
  
         //deals knockback from the transform pos
         //
         Transform posCache;
 
-        Debug.Log(enemyColliders.Count);
 
-        for (int i = 0; i < enemyColliders.Count; i++)
+        for (int i = 0; i < enemyColliders.Length; i++)
         {
-            if (enemyColliders[i]!= null && enemyColliders[i].isTrigger == true)
+            if (enemyColliders[i] != null && LayerMask.NameToLayer("Enemy") == enemyColliders[i].gameObject.layer
+                && enemyColliders[i].gameObject.CompareTag("EnemyHitbox"))
             {
                 Debug.Log("Rigidbody2D assigned");
-                Rigidbody2D rbEnemy = enemyColliders[i].gameObject.transform.parent.GetComponent<Rigidbody2D>();
-
-                if (rbEnemy != null)
+                
+                if (enemyColliders[i].gameObject.transform.parent.TryGetComponent<Rigidbody2D>(out var rbEnemy))
                 {
 
-                    enemyColliders[i].gameObject.transform.parent.GetComponent<MeleeAI>().IsStunned = true;
+                    enemyColliders[i].gameObject.transform.parent.GetComponent<Actor>().IsStunned = true;
 
 
                     posCache = rbEnemy.transform;
@@ -85,6 +111,12 @@ public abstract class Weapon : MonoBehaviour
 
 
                 }
+                else { Debug.Log("RB is null"); }
+            }
+            else 
+            {
+                Debug.Log("Failed to add Knockback");
+
             }
         }
 

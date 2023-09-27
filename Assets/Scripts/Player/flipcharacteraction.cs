@@ -61,7 +61,7 @@ public class Pflipcharacteraction : MonoBehaviour
        
 
        
-        Move();
+        Move(horizontalInput);
 
         
 
@@ -70,14 +70,14 @@ public class Pflipcharacteraction : MonoBehaviour
 
    
 
-    void Move()
+    void Move(float horizontal)
     {
-        float direction = horizontalInput;
+        float direction = horizontal;
 
         //if looking right and clicked left(flip to the left)
         if(faceRight && direction < 0)
         {
-            transform.localScale = new Vector3(-6, 6, 6);
+            transform.localScale = new Vector3(-1, 1, 1);
             
             faceRight = false;
 
@@ -86,7 +86,7 @@ public class Pflipcharacteraction : MonoBehaviour
         //if looking left and click right(flip to the right)
         else if (!faceRight && direction > 0)
         {
-            transform.localScale = new Vector3(6, 6, 6);
+            transform.localScale = new Vector3(1, 1, 1);
             
             faceRight = true;
            
@@ -95,7 +95,7 @@ public class Pflipcharacteraction : MonoBehaviour
        
 
         animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-       
+
     }
 
     
