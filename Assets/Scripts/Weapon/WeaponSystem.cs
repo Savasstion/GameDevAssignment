@@ -8,20 +8,20 @@ public class WeaponSystem : MonoBehaviour
     public SlashWeapon sword;
 
 
-    void Start()
-    {
-        //for now put a default weapon
-        weapon = sword;
+    //void Start()
+    //{
+    //    //for now put a default weapon
+    //    weapon = sword;
 
-    }
+    //}
 
 
-    void Update()
-    {
-        //if()
-        transform.parent.GetComponent<Player>().EquippedWeapon = weapon;
+    //void Update()
+    //{
+    //    //if()
+    //    transform.parent.GetComponent<Player>().EquippedWeapon = weapon;
 
-    }
+    //}
 
     
 }

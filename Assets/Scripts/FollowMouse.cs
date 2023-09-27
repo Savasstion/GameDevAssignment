@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class FollowMouse : MonoBehaviour
 {
+    [SerializeField]
+    Vector3 mousePos;
+    [SerializeField]
+    Vector3 mousePosition;
 
-   
         void Update(){
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = mousePos;
         mousePosition.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
         transform.position = mousePosition;
     }

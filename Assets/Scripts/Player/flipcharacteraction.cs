@@ -95,7 +95,7 @@ public class Pflipcharacteraction : MonoBehaviour
        
 
         animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-
+       
     }
 
     

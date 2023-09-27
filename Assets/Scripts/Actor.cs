@@ -5,28 +5,33 @@ using UnityEngine;
 public abstract class Actor : MonoBehaviour
 {
     [SerializeField]
-    private float atkPoint;
+    GameObject attackArea = default;
+    
+    bool attacking = false;
+
+    float timeToAttack = .25f, timer = 0f;
     [SerializeField]
-    private float atkSpeed;
+     float atkPoint;
     [SerializeField]
-    private float hp;
+     float atkSpeed;
+
     [SerializeField]
-    private bool isInvulnerable;
+     bool isInvulnerable;
     [SerializeField]
-    private float moveSpeed;
+     float moveSpeed;
     [SerializeField]
-    private Vector2 moveDir;
+     Vector2 moveDir;
     [SerializeField]
-    private bool isStunned;
+     bool isStunned;
     [SerializeField]
-    private Rigidbody2D rb;
+     Rigidbody2D rb;
     [SerializeField]
-    private float dashDistance;
+     float dashDistance;
 
 
     public float AtkPoint { get => atkPoint; set => atkPoint = value; }
     public float AtkSpeed { get => atkSpeed; set => atkSpeed = value; }
-    public float Hp { get => hp; set => hp = value; }
+
     public bool IsInvulnerable { get => isInvulnerable; set => isInvulnerable = value; }
   
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
@@ -34,6 +39,10 @@ public abstract class Actor : MonoBehaviour
     public bool IsStunned { get => isStunned; set => isStunned = value; }
     public Rigidbody2D Rb { get => rb; set => rb = value; }
     public float DashDistance { get => dashDistance; set => dashDistance = value; }
+    public GameObject AttackArea { get => attackArea; set => attackArea = value; }
+    public bool Attacking { get => attacking; set => attacking = value; }
+    public float TimeToAttack { get => timeToAttack; set => timeToAttack = value; }
+    public float Timer { get => timer; set => timer = value; }
 
     public abstract void Move();
 
@@ -85,10 +94,7 @@ public abstract class Actor : MonoBehaviour
         
     }
 
-    public void Despawn() 
-    { 
-        Destroy(gameObject);
-    }
+   
 }
 
 

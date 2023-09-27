@@ -52,75 +52,90 @@ public abstract class Weapon : MonoBehaviour
             1);
     }
 
-    public void ApplyDamage(Collider2D[] enemyColliders, float atkPoint) 
-    {
-        for (int i = 0; i < enemyColliders.Length; i++)
-        {
-            //test
-            Destroy(enemyColliders[i].gameObject);
+    //public void ApplyDamage(Collider2D[] enemyColliders, float atkPoint) 
+    //{
+    //    for (int i = 0; i < enemyColliders.Length; i++)
+    //    {
+    //        //test
+    //        Destroy(enemyColliders[i].gameObject);
 
-            Debug.Log("enemyColliders[i] layer number = " + enemyColliders[i].gameObject.layer);
-            if (/*enemyColliders[i] != null && */(LayerMask.NameToLayer("Enemy") == enemyColliders[i].gameObject.layer)
-                /*&& enemyColliders[i].gameObject.CompareTag("EnemyHitbox")*/)
-            {
-                enemyColliders[i].gameObject.transform.parent.GetComponent<Actor>().Hp -= (atkModifier * atkPoint);
+    //        Debug.Log("enemyColliders[i] layer number = " + enemyColliders[i].gameObject.layer);
+    //        if (/*enemyColliders[i] != null && */(LayerMask.NameToLayer("Enemy") == enemyColliders[i].gameObject.layer)
+    //            /*&& enemyColliders[i].gameObject.CompareTag("EnemyHitbox")*/)
+    //        {
+    //            enemyColliders[i].gameObject.transform.parent.GetComponent<Actor>().Hp -= (atkModifier * atkPoint);
 
-                Debug.Log("Applied Damage");
-                //enemyColliders[i].gameObject.transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-            else {
-                Debug.Log("Failed to do damage");
-            }
-        }
+    //            Debug.Log("Applied Damage");
+    //            //enemyColliders[i].gameObject.transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
+    //        }
+    //        else {
+    //            Debug.Log("Failed to do damage");
+    //        }
+    //    }
     
-    }
+    //}
 
-    public void ApplyKnockback(Collider2D[] enemyColliders) 
-    {
+//    public void ApplyKnockback(Collider2D[] enemyColliders) 
+//    {
  
-        //deals knockback from the transform pos
-        //
-        Transform posCache;
+//        //deals knockback from the transform pos
+//        //
+//        Transform posCache;
 
 
-        for (int i = 0; i < enemyColliders.Length; i++)
-        {
-            if (enemyColliders[i] != null && LayerMask.NameToLayer("Enemy") == enemyColliders[i].gameObject.layer
-                && enemyColliders[i].gameObject.CompareTag("EnemyHitbox"))
-            {
-                Debug.Log("Rigidbody2D assigned");
+//        for (int i = 0; i < enemyColliders.Length; i++)
+//        {
+//            if (enemyColliders[i] != null && LayerMask.NameToLayer("Enemy") == enemyColliders[i].gameObject.layer
+//                && enemyColliders[i].gameObject.CompareTag("EnemyHitbox"))
+//            {
+//                Debug.Log("Rigidbody2D assigned");
                 
-                if (enemyColliders[i].gameObject.transform.parent.TryGetComponent<Rigidbody2D>(out var rbEnemy))
-                {
+//                if (enemyColliders[i].gameObject.transform.parent.TryGetComponent<Rigidbody2D>(out var rbEnemy))
+//                {
 
-                    enemyColliders[i].gameObject.transform.parent.GetComponent<Actor>().IsStunned = true;
-
-
-                    posCache = rbEnemy.transform;
-
-                    Vector2 toEnemyDir = posCache.position - transform.position;
+//                    enemyColliders[i].gameObject.transform.parent.GetComponent<Actor>().IsStunned = true;
 
 
-                    //Debug.Log(knockbackDistance);
+//                    posCache = rbEnemy.transform;
 
-                    rbEnemy.velocity = Vector2.zero;
-                    //rb.AddForce(toEnemyDir.normalized * explosionStrength, ForceMode2D.Impulse);
-                    rbEnemy.AddForce(knocbackModifier * toEnemyDir.normalized, ForceMode2D.Impulse);
-                    Debug.Log("Added Knockback");
+//                    Vector2 toEnemyDir = posCache.position - transform.position;
 
 
+//                    //Debug.Log(knockbackDistance);
 
-                }
-                else { Debug.Log("RB is null"); }
-            }
-            else 
-            {
-                Debug.Log("Failed to add Knockback");
-
-            }
-        }
+//                    rbEnemy.velocity = Vector2.zero;
+//                    //rb.AddForce(toEnemyDir.normalized * explosionStrength, ForceMode2D.Impulse);
+//                    rbEnemy.AddForce(knocbackModifier * toEnemyDir.normalized, ForceMode2D.Impulse);
+//                    Debug.Log("Added Knockback");
 
 
-    }
 
+//                }
+//                else { Debug.Log("RB is null"); }
+//            }
+//            else 
+//            {
+//                Debug.Log("Failed to add Knockback");
+
+//            }
+//        }
+
+
+//    }
+
+//=======
+//public class Weapon : MonoBehaviour
+//{
+//    // Start is called before the first frame update
+//    void Start()
+//    {
+        
+//    }
+
+//    // Update is called once per frame
+//    void Update()
+//    {
+        
+//    }
+//>>>>>>> Stashed changes
 }
