@@ -16,6 +16,8 @@ public class GrenadeSkill : PlacementSkill
 
     public override void CastSkill()
     {
+        //deals knockback from the transform pos
+        //
         Collider2D[] enemyCollider = getEnemyCollider();
         Transform posCache;
 

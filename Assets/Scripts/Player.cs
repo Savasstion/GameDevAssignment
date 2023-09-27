@@ -8,6 +8,8 @@ using UnityEngine.PlayerLoop;
 public class Player : Actor
 {
     [SerializeField]
+    private Weapon equippedWeapon;
+    [SerializeField]
     private bool isInCombat;
     [SerializeField]
     private bool isInMenu;
@@ -41,12 +43,15 @@ public class Player : Actor
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
     public Vector2 AimDir { get => aimDir; set => aimDir = value; }
     public Animator Animator { get => animator; set => animator = value; }
-
+    public Weapon EquippedWeapon { get => equippedWeapon; set => equippedWeapon = value; }
 
     void Start() 
     {
         IsInvulnerable = false;
         //audioSource = GetComponent<AudioSource>();
+
+       
+
     }
     
  
@@ -55,6 +60,8 @@ public class Player : Actor
     void Update()
     { 
         AimDir = mousePos.position - transform.position;
+
+       
 
         if (Input.GetKeyDown(KeyCode.Space) && (dashCount < maxDashCount) && IsInvulnerable == false)
         { 
@@ -73,7 +80,7 @@ public class Player : Actor
             //reset and start dash cooldown timer
             Invoke("StartDashCD", dashCoolDownTime);
 
-
+            return;
         }
 
         if (IsInvulnerable)
@@ -82,7 +89,7 @@ public class Player : Actor
             return;
         }
 
-        if (Input.GetButtonDown("Attack") && !IsInvulnerable)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable && !IsStunned)
         {  
             Attack(MoveDir);
         }
@@ -149,7 +156,16 @@ public class Player : Actor
 
     public override void Attack(Vector2 attackDr) 
     {
+        //if using range weapons then need to use attackDr
         Animator.SetTrigger("Attack");
+        Debug.Log("Attack Anim triggered");
+
+        //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
+
+        List<Collider2D> enemyColliders = equippedWeapon.AttackCollider.GetComponent<WeaponCollider>().EnemyColliders;
+
+        equippedWeapon.ApplyDamage(enemyColliders, AtkPoint);
+        equippedWeapon.ApplyKnockback(enemyColliders);
 
     }
 

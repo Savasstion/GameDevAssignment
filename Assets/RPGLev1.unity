@@ -978,10 +978,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2700588193169632828, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
+      propertyPath: enemyLayerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 7556285220517116567, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: mousePos
       value: 
       objectReference: {fileID: 655684258}
+    - target: {fileID: 8380391106144858254, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9108675271459903759, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: m_Name
       value: Player
