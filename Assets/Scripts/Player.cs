@@ -29,9 +29,6 @@ public class Player : Actor
     private short dashCount = 0, maxDashCount;
     [SerializeField]
     private float dashCoolDownTime;
-    [SerializeField]
-    private Weapon equippedWeapon;
-
 
     public AudioSource audioSource;
     public Transform mousePos;
@@ -50,8 +47,6 @@ public class Player : Actor
 
     void Start() 
     {
-        
-
         IsInvulnerable = false;
         //audioSource = GetComponent<AudioSource>();
 
@@ -66,28 +61,7 @@ public class Player : Actor
     { 
         AimDir = mousePos.position - transform.position;
 
-<<<<<<< Updated upstream
        
-=======
-        if (Input.GetKeyDown(KeyCode.Mouse0) /*&& !IsInvulnerable*/)
-        {
-            Attack(aimDir);
-            
-        }
-
-        if (Attacking) 
-        {
-            Timer += Time.deltaTime;
-
-            if (Timer >= TimeToAttack) 
-            {
-                Timer = 0;
-                Attacking = false;
-                AttackArea.SetActive(Attacking);
-            }
-
-        }
->>>>>>> Stashed changes
 
         if (Input.GetKeyDown(KeyCode.Space) && (dashCount < maxDashCount) && IsInvulnerable == false)
         { 
@@ -115,14 +89,10 @@ public class Player : Actor
             return;
         }
 
-<<<<<<< Updated upstream
         if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable && !IsStunned)
         {  
             Attack(MoveDir);
         }
-=======
-        
->>>>>>> Stashed changes
 
     }
     
@@ -184,11 +154,10 @@ public class Player : Actor
 
 
 
-    public override void Attack(Vector2 aimDir) 
+    public override void Attack(Vector2 attackDr) 
     {
         //if using range weapons then need to use attackDr
         Animator.SetTrigger("Attack");
-<<<<<<< Updated upstream
         Debug.Log("Attack Anim triggered");
 
         //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
@@ -203,12 +172,6 @@ public class Player : Actor
         equippedWeapon.ApplyDamage(enemyColliders, AtkPoint);
         equippedWeapon.ApplyKnockback(enemyColliders);
         
-=======
-        Attacking = true;
-        AttackArea.SetActive(Attacking);
-        Debug.Log("Attacking");
-        Debug.Log("Enemy layermask = "+LayerMask.NameToLayer("Enemy"));
->>>>>>> Stashed changes
     }
 
     public void StartDashCD()

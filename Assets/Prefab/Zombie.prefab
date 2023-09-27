@@ -1,6 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< Updated upstream
 --- !u!1 &678353747937096827
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,8 +95,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
-=======
->>>>>>> Stashed changes
 --- !u!1 &1194739841803787596
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,8 +157,6 @@ GameObject:
   - component: {fileID: 8917351059733843637}
   - component: {fileID: 7750544911867482285}
   - component: {fileID: 8582118858415916850}
-  - component: {fileID: 5310190922590949310}
-  - component: {fileID: 5756808103745861915}
   m_Layer: 7
   m_Name: Zombie
   m_TagString: Zombie
@@ -183,6 +178,7 @@ Transform:
   m_Children:
   - {fileID: 3525001749115298738}
   - {fileID: 1822879245863996714}
+  - {fileID: 2736039690929308228}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -278,12 +274,12 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 136
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 136
   m_Interpolate: 0
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &8917351059733843637
@@ -313,9 +309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fb5e5faa15cb44f813317354e9659a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackArea: {fileID: 0}
   atkPoint: 20
   atkSpeed: 1
+  hp: 100
   isInvulnerable: 0
   moveSpeed: 2
   moveDir: {x: 0, y: 0}
@@ -356,7 +352,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 136
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -376,57 +372,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012961468, y: -0.13393629}
+  m_Offset: {x: 0.012961468, y: -0.13393591}
   m_Size: {x: 0.38509005, y: 0.38509005}
-  m_Direction: 0
---- !u!114 &5310190922590949310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603419833372685661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c561acefdfabe4ba31aaf33e34493f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 10
-  maxHP: 10
---- !u!70 &5756808103745861915
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603419833372685661}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0060617924, y: 0}
-  m_Size: {x: 0.49047488, y: 0.64}
   m_Direction: 0
 --- !u!1 &2599634611740038462
 GameObject:

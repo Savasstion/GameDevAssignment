@@ -4,26 +4,18 @@ using UnityEngine;
 
 public class WeaponFollowMouse : MonoBehaviour
 {
-    public Player player;
+    public Transform mouse;
     private Vector2 mouseDir;
-   
-    void Update()
+    // Start is called before the first frame update
+    void Start()
     {
         
-        transform.localScale = Vector3.one;
+    }
 
-        Vector2 mouseOnScreen = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        mouseDir = (mouseOnScreen - (Vector2)transform.position).normalized;
-        if (player.AimDir.x < 0)
-        {
-            transform.right = -mouseDir;
-        }
-        else if (player.AimDir.x == 0) 
-        {
-            transform.right = mouseDir;
-        }
-        else
-            transform.right = mouseDir;
+    // Update is called once per frame
+    void Update()
+    {
+        mouseDir = (mouse.position - transform.position).normalized;
+        transform.right = mouseDir;
     }
 }

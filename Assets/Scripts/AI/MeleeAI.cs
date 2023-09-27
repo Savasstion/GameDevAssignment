@@ -40,11 +40,11 @@ public class MeleeAI : Enemy
             return;
         }
 
-        //if (Hp <= 0)
-        //{
-        //    //set defeated bool true in animator
-        //    EnterDefeatState();
-        //}
+        if (Hp <= 0)
+        {
+            //set defeated bool true in animator
+            EnterDefeatState();
+        }
 
 
     }
