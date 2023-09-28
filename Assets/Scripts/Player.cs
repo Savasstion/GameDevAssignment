@@ -62,8 +62,10 @@ public class Player : Actor
 
         IsInvulnerable = false;
         //audioSource = GetComponent<AudioSource>();
+        Rb.velocity = Vector2.zero;
 
-       
+
+
 
     }
     
@@ -171,7 +173,7 @@ public class Player : Actor
         }
 
         //line 69 also got animation variable
-        Animator.SetFloat("playerDir", AimDir.x);
+        Animator.SetInteger("playerDir", (int)AimDir.x);
         Animator.SetInteger("xVelocity", (int)Rb.velocity.x);
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
