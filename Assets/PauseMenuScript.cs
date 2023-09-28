@@ -17,15 +17,15 @@ public class PauseMenuScript : MonoBehaviour
         
     }
 
-    public void ResumeGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
-    }
+    //public void ResumeGame()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
+    //}
 
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
-    }
+    //public void RestartGame()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
+    //}
     public void Setting()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
