@@ -5,6 +5,7 @@ using UnityEngine.PlayerLoop;
 
 public class MeleeAI : Enemy
 {
+
     [SerializeField]
     private List<Detector> detectors;
 
@@ -13,6 +14,11 @@ public class MeleeAI : Enemy
 
     [SerializeField]
     private AIData aiData;
+
+    [SerializeField]
+    float atkCooldown;
+    [SerializeField]
+    float atkRange;
 
     [SerializeField]
     private float detectionDelay = 0.05f, speed;
@@ -28,17 +34,52 @@ public class MeleeAI : Enemy
 
     private bool isAllowedDodge;
     public float dodgeCooldown;
+    public Transform player;
+    private bool allowedToAttack;
 
+    public float AtkRange { get => atkRange; set => atkRange = value; }
+    public bool AllowedToAttack { get => allowedToAttack; set => allowedToAttack = value; }
+    public float AtkCooldown { get => atkCooldown; set => atkCooldown = value; }
 
+  
 
     private void Update()
     {
+        
 
-        if (IsInvulnerable)
+            if (IsInvulnerable)
         {
             Invoke("BecomeVulnerable", 0.5f);
             return;
         }
+
+           
+        if (!CheckIfDefeated())
+        {
+
+            if ((player.position - transform.position).magnitude <= (atkRange) && allowedToAttack == true)
+            { 
+                Attack((player.position - transform.position).normalized);
+                allowedToAttack = false;
+                StartCoroutine(AllowAttack());
+            }
+            if (Attacking)
+            {
+                Timer += Time.deltaTime;
+
+                if (Timer >= TimeToAttack)
+                {
+                    Timer = 0;
+                    Attacking = false;
+                    AttackArea.SetActive(Attacking);
+                }
+
+            }
+
+
+            Move();
+        }
+
 
         //if (Hp <= 0)
         //{
@@ -53,21 +94,13 @@ public class MeleeAI : Enemy
 
     private void Start()
     {
+        allowedToAttack = true;
         isAllowedDodge = true;
         IsStunned = false;
         InvokeRepeating("PerformDetection", 0, detectionDelay);
 
     }
 
-    private void FixedUpdate()
-    {
-        //rb2d.velocity = Vector2.zero;
-
-        Move();
-
-       
-
-    }
 
     private void PerformDetection() 
     {
@@ -81,6 +114,11 @@ public class MeleeAI : Enemy
 
     public override void Move()
     {
+        if (MoveDir.x < 0)
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        else
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+
         if (IsStunned)
         {
 
@@ -88,6 +126,7 @@ public class MeleeAI : Enemy
             return;
         }
 
+       
 
         //if (!IsInvulnerable)
         //{
@@ -107,6 +146,7 @@ public class MeleeAI : Enemy
                 {
                     //Debug.Log("Dash");
 
+                    StartCoroutine(DashFeedback());
                     Dash(directionToPlayer);
                     IsInvulnerable = false;
                     isAllowedDodge = false;
@@ -128,9 +168,33 @@ public class MeleeAI : Enemy
         Debug.Log("Set Allow Dodge True");
     }
 
+    IEnumerator AllowAttack()
+    {
+        yield return new WaitForSeconds(atkCooldown);
+        allowedToAttack = true;
+        Debug.Log("Set Allow Attack True");
+    }
+
+    IEnumerator DashFeedback() 
+    {
+    this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        yield return new WaitForSeconds(.5f);
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     public override void Attack(Vector2 attackDr)
     {
-        throw new System.NotImplementedException();
+        Animator.SetTrigger("Attack");
+
+        Debug.Log("Attack Anim triggered");
+
+        //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
+
+
+        Debug.Log("Enemy Attacking");
+        Attacking = true;
+        AttackArea.SetActive(Attacking);
+
     }
 
     public override void AlertAllEnemies()

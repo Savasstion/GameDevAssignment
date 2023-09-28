@@ -7,14 +7,12 @@ using UnityEngine.PlayerLoop;
 
 public class Player : Actor
 {
-    [SerializeField]
-    private Weapon equippedWeapon;
+
     [SerializeField]
     private bool isInCombat;
     [SerializeField]
     private bool isInMenu;
-    [SerializeField]
-    private int maxHP;
+
     [SerializeField]
     private Transform lastChkPointCoord;
     [SerializeField]
@@ -23,8 +21,7 @@ public class Player : Actor
     private bool isAllowedDodge;
     [SerializeField]
     private Vector2 aimDir;
-    [SerializeField]
-    private Animator animator;
+
     [SerializeField]
     private short dashCount = 0, maxDashCount;
     [SerializeField]
@@ -39,12 +36,12 @@ public class Player : Actor
 
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
     public bool IsInMenu { get => isInMenu; set => isInMenu = value; }
-    public int MaxHP { get => maxHP; set => maxHP = value; }
+
     public Transform LastChkPointCoord { get => lastChkPointCoord; set => lastChkPointCoord = value; }
     public float DefModifier { get => defModifier; set => defModifier = value; }
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
     public Vector2 AimDir { get => aimDir; set => aimDir = value; }
-    public Animator Animator { get => animator; set => animator = value; }
+
 
 
     void Start() 
@@ -67,7 +64,7 @@ public class Player : Actor
 
         Move();
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) /*&& !IsInvulnerable*/)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable)
         {
             Attack(aimDir);
             
@@ -113,10 +110,10 @@ public class Player : Actor
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable && !IsStunned)
-        {  
-            Attack(MoveDir);
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable && !IsStunned)
+        //{  
+        //    Attack(MoveDir);
+        //}
 
 
     }
@@ -162,8 +159,8 @@ public class Player : Actor
         }
 
         //line 69 also got animation variable
-        animator.SetFloat("playerDir", AimDir.x);
-        animator.SetInteger("xVelocity", (int)Rb.velocity.x);
+        Animator.SetFloat("playerDir", AimDir.x);
+        Animator.SetInteger("xVelocity", (int)Rb.velocity.x);
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
         Rb.velocity = MoveDir * MoveSpeed;
@@ -195,5 +192,25 @@ public class Player : Actor
     {
         dashCount = 0;
         Debug.Log(dashCount);
+    }
+
+    public void HitFeedback() 
+    {
+        StartCoroutine(StartBlinking());
+    }
+
+    IEnumerator StartBlinking() 
+    {
+        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

@@ -12,24 +12,40 @@ public class GrenadeSkill : PlacementSkill
     [SerializeField]
     private bool showGizmos = false;
 
+    private int amountExploded = 0;
+    public GameObject explosions;
 
+    private void Update()
+    {
+
+
+
+
+    }
 
     public override void CastSkill()
     {
         //deals knockback from the transform pos
         //
+
+        if (amountExploded == 3)
+            amountExploded = 0;
         Collider2D[] enemyCollider = getEnemyCollider();
         Transform posCache;
 
         Debug.Log(enemyCollider.Length);
 
-        for (int i = 0; i < enemyCollider.Length; i++) 
+        explosions.transform.GetChild(amountExploded).transform.position = SkillPos.position;
+
+        StartCoroutine(triggerExploion());
+        amountExploded++;
+        for (int i = 0; i < enemyCollider.Length; i++)
         {
             rb = enemyCollider[i].attachedRigidbody;
 
             if (rb != null)
             {
-                
+                //knockback
                 enemyCollider[i].gameObject.GetComponent<MeleeAI>().IsStunned = true;
 
 
@@ -46,10 +62,28 @@ public class GrenadeSkill : PlacementSkill
 
 
                 Debug.Log((SkillRadius - toEnemyDir.magnitude));
+
+                //damage
+                if (enemyCollider[i].gameObject.GetComponent<Health>() != null
+            && enemyCollider[i].gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    Health health = enemyCollider[i].gameObject.GetComponent<Health>();
+                    health.Damage(explosionStrength / 2);
+                    Debug.Log("Damage Dealt");
+                }
+                else
+                    Debug.Log("Failed to deal damage");
             }
         }
 
+        IEnumerator triggerExploion()
+        {
+            explosions.transform.GetChild(amountExploded).gameObject.SetActive(true);
 
+            int buffer = amountExploded;
+            yield return new WaitForSeconds(.5f);
+            explosions.transform.GetChild(buffer).gameObject.SetActive(false);
+        }
     }
 
 

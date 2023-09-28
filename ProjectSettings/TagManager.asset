@@ -9,6 +9,7 @@ TagManager:
   - Zombie
   - Obstacle
   - EnemyHitbox
+  - Enemy
   layers:
   - Default
   - TransparentFX
