@@ -14,6 +14,14 @@ public class Health : MonoBehaviour
         hp = 100;
         maxHP = 100;
     }
+
+    IEnumerator damageFeedback()
+    {
+        this.GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     public void Damage(float amount)
     {
         if (amount < 0)
@@ -21,10 +29,31 @@ public class Health : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
         }
 
-        this.hp -= amount;
+        
+
+        if (this.gameObject.CompareTag("Player"))
+        {
+            if (this.gameObject.GetComponent<Player>().IsInvulnerable)
+                this.hp -= 0;
+            else
+            {
+                this.hp -= amount;
+                this.gameObject.GetComponent<Player>().HitFeedback();
+            }
+        }
+        else if (this.gameObject.CompareTag("Enemy"))
+        {
+            this.hp -= amount;
+            StartCoroutine(damageFeedback());
+
+
+        }
+
+        
 
         if (hp <= 0)
         {
+            this.GetComponent<SpriteRenderer>().color = Color.red;
             Die();
         }
     }
@@ -50,7 +79,8 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
+        this.GetComponent<SpriteRenderer>().color = Color.red;
         Debug.Log("Dies");
-        Destroy(this.gameObject);
+        gameObject.GetComponent<Actor>().EnterDefeatState();
     }
 }

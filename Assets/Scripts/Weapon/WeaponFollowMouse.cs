@@ -19,10 +19,6 @@ public class WeaponFollowMouse : MonoBehaviour
         {
             transform.right = -mouseDir;
         }
-        else if (player.AimDir.x == 0) 
-        {
-            transform.right = mouseDir;
-        }
         else
             transform.right = mouseDir;
     }
