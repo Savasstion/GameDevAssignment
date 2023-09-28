@@ -46,7 +46,7 @@ public class GrenadeSkill : PlacementSkill
             if (rb != null)
             {
                 //knockback
-                enemyCollider[i].gameObject.GetComponent<MeleeAI>().IsStunned = true;
+                enemyCollider[i].gameObject.GetComponent<Actor>().IsStunned = true;
 
 
                 posCache = rb.transform;
@@ -61,7 +61,7 @@ public class GrenadeSkill : PlacementSkill
                 rb.AddForce((SkillRadius - toEnemyDir.magnitude) * explosionStrength * toEnemyDir.normalized, ForceMode2D.Impulse);
 
 
-                Debug.Log((SkillRadius - toEnemyDir.magnitude));
+                //Debug.Log((SkillRadius - toEnemyDir.magnitude));
 
                 //damage
                 if (enemyCollider[i].gameObject.GetComponent<Health>() != null

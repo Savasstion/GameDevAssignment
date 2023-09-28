@@ -41,8 +41,20 @@ public class Player : Actor
     public float DefModifier { get => defModifier; set => defModifier = value; }
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
     public Vector2 AimDir { get => aimDir; set => aimDir = value; }
+    public float iFrameDuration;
+    
+    public new void BecomeVulnerable()
+    {
+        IsInvulnerable = false;
+        CancelInvoke("BecomeVulnerable");
+    }
 
-
+    public IEnumerator MakeInvulnerableAfterDamaged() 
+    {
+        IsInvulnerable = true; 
+        yield return new WaitForSeconds(iFrameDuration);
+        IsInvulnerable = false;
+    }
 
     void Start() 
     {
@@ -141,7 +153,7 @@ public class Player : Actor
         //if (faceRight && horizontalInput < 0)
         if(AimDir.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3( -(Mathf.Abs(transform.localScale.x)), transform.localScale.y, transform.localScale.z);
 
             faceRight = false;
 
@@ -151,7 +163,7 @@ public class Player : Actor
         //else if (!faceRight && horizontalInput > 0)
         else if (AimDir.x > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
             faceRight = true;
 
@@ -184,7 +196,7 @@ public class Player : Actor
         Attacking = true;
         AttackArea.SetActive(Attacking);
         Debug.Log("Attacking");
-        Debug.Log("Enemy layermask = "+LayerMask.NameToLayer("Enemy"));
+        //Debug.Log("Enemy layermask = "+LayerMask.NameToLayer("Enemy"));
 
     }
 
@@ -202,15 +214,23 @@ public class Player : Actor
     IEnumerator StartBlinking() 
     {
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(iFrameDuration/9f);
         this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(iFrameDuration / 9f);
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(iFrameDuration / 9f);
         this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(iFrameDuration / 9f);
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(iFrameDuration / 9f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(iFrameDuration / 9f);
+        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        yield return new WaitForSeconds(iFrameDuration / 9f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(iFrameDuration / 9f);
+        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        yield return new WaitForSeconds(iFrameDuration / 9f);
         this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

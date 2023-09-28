@@ -37,6 +37,7 @@ public class Health : MonoBehaviour
                 this.hp -= 0;
             else
             {
+                StartCoroutine(this.gameObject.GetComponent<Player>().MakeInvulnerableAfterDamaged());
                 this.hp -= amount;
                 this.gameObject.GetComponent<Player>().HitFeedback();
             }

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public abstract class Actor : MonoBehaviour
 {
-    
-    
+
+    [SerializeField]
     bool attacking = false;
     [SerializeField]
     GameObject attackArea = default;
-    float timeToAttack = .25f, timer = 0f;
+    [SerializeField]
+    float timeToAttack = .25f;
+    float timer = 0f;
     //[SerializeField]
     // float atkPoint;
     //[SerializeField]
@@ -100,6 +102,7 @@ public abstract class Actor : MonoBehaviour
     Destroy(gameObject);
     
     }
+
 
     public bool CheckIfDefeated()
     {
