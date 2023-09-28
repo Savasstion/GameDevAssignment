@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1680443638623858194, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.418465
+      value: 2.19
       objectReference: {fileID: 0}
     - target: {fileID: 1680443638623858194, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -984,7 +984,19 @@ MonoBehaviour:
   isInteractable: 0
   questID: 0
   factionID: 0
+  projectile: {fileID: 0}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   gunBarrel: {fileID: 0}
+  playerCollider: {fileID: 0}
+  detectionRange: 0
+  projectileSpeed: 1
+  atkCooldown: 3
+  fireRate: 0.06666667
 --- !u!212 &1147445594
 SpriteRenderer:
   m_ObjectHideFlags: 0

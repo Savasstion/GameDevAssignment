@@ -1730,9 +1730,9 @@ TextureImporter:
       name: tilesStuff_77
       rect:
         serializedVersion: 2
-        x: 1390
+        x: 1440
         y: 41
-        width: 181
+        width: 131
         height: 199
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1753,7 +1753,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1440
         y: 480
-        width: 174
+        width: 144
         height: 144
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1827,6 +1827,48 @@ TextureImporter:
       bones: []
       spriteID: b256ded67a65de1429f000094e69cc31
       internalID: -459728042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesStuff_82
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 577
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdad159fb0ae26d478426d7df9c6df3f
+      internalID: -1205711816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesStuff_83
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 528
+        width: 21
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e5c253ccceff7b4ba1a368b91821fe4
+      internalID: -2066765553
       vertices: []
       indices: 
       edges: []
@@ -1923,6 +1965,8 @@ TextureImporter:
       tilesStuff_8: 1743536284
       tilesStuff_80: -1696177540
       tilesStuff_81: -459728042
+      tilesStuff_82: -1205711816
+      tilesStuff_83: -2066765553
       tilesStuff_9: 921815911
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
