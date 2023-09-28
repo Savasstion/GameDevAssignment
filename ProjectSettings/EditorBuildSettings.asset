@@ -9,18 +9,30 @@ EditorBuildSettings:
     path: Assets/a UI game/Start Menu.unity
     guid: 655398a28fd89294e8a661b556c98349
   - enabled: 1
+    path: Assets/a UI game/Guide.unity
+    guid: 76baa0af94551144e8ca249416be3c99
+  - enabled: 1
+    path: Assets/a UI game/PauseMenu.unity
+    guid: 6fa7a2723d6aaaa4fa3f1ad34f14ca60
+  - enabled: 1
+    path: Assets/a UI game/SettingMenu.unity
+    guid: 1b91126de35411b4890115b40179b4ae
+  - enabled: 1
+    path: Assets/a UI game/Mission.unity
+    guid: fc9e280f76fec504da6e31535f2bafd1
+  - enabled: 1
+    path: Assets/a UI game/InventoryMenu.unity
+    guid: 9dcf42e70e9c3354ea4bc61c3956f61b
+  - enabled: 1
+    path: Assets/a UI game/ComfirmQuit.unity
+    guid: dd3b4c6434788124c9217cf1d6c4600e
+  - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: bab74a791da32594293aa5b736fa6f32
-  - enabled: 1
-    path: Assets/UI game/Setting Menu.unity
-    guid: fd02a73692d8df4419c7be9dd7228f16
-  - enabled: 1
-    path: Assets/Scenes/Office.unity
-    guid: e9905467ed3669e41b275f842c1e5105
   - enabled: 1
     path: Assets/Scenes/LAB.unity
     guid: 070b5dfdcb2da0647a9166163b95fa46
   - enabled: 1
-    path: Assets/Scenes/ROAD.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Office.unity
+    guid: e9905467ed3669e41b275f842c1e5105
   m_configObjects: {}
