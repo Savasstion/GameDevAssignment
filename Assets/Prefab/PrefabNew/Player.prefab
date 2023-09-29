@@ -737,6 +737,7 @@ GameObject:
   - component: {fileID: 8047602352380067378}
   - component: {fileID: 2543426643525562656}
   - component: {fileID: 6901140797072052273}
+  - component: {fileID: 6034230511886187823}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -759,7 +760,7 @@ Transform:
   - {fileID: 662330610376790930}
   - {fileID: 8686783529126194042}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2768303061064876514
 SpriteRenderer:
@@ -919,6 +920,7 @@ MonoBehaviour:
   dashDistance: 10
   defeated: 0
   animator: {fileID: 7426976953821704167}
+  restartLevel: {fileID: 0}
   isMelee: 1
   isInCombat: 0
   isInMenu: 0
@@ -1046,6 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHP: 100
+  levelChecker: {fileID: 0}
 --- !u!114 &2543426643525562656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,3 +1159,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6034230511886187823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108675271459903759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbd9641351227f44937bc0dcf47239d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 8047602352380067378}
+  slider: {fileID: 0}

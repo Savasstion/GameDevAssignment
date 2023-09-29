@@ -62,9 +62,6 @@ TagManager:
   - name: Obstacle
     uniqueID: 2897116173
     locked: 0
-  - name: UI
-    uniqueID: 1075617437
-    locked: 0
   - name: Text
     uniqueID: 2631110103
     locked: 0
@@ -73,4 +70,7 @@ TagManager:
     locked: 0
   - name: tile
     uniqueID: 1387817885
+    locked: 0
+  - name: UI
+    uniqueID: 1075617437
     locked: 0

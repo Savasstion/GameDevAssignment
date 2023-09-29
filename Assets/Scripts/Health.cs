@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -11,10 +12,15 @@ public class Health : MonoBehaviour
     [SerializeField]
     GameObject levelChecker;
 
+
+    public float Hp { get => hp; set => hp = value; }
+    public float MaxHP { get => maxHP; set => maxHP = value; }
+    public GameObject LevelChecker { get => levelChecker; set => levelChecker = value; }
+
     private void Start()
     {
-        hp = 100;
-        maxHP = 100;
+        Hp = 100;
+        MaxHP = 100;
     }
 
     IEnumerator damageFeedback()
@@ -52,17 +58,17 @@ public class Health : MonoBehaviour
         if (this.gameObject.CompareTag("Player"))
         {
             if (this.gameObject.GetComponent<Player>().IsInvulnerable)
-                this.hp -= 0;
+                this.Hp -= 0;
             else
             {
                 StartCoroutine(this.gameObject.GetComponent<Player>().MakeInvulnerableAfterDamaged());
-                this.hp -= amount;
+                this.Hp -= amount;
                 this.gameObject.GetComponent<Player>().HitFeedback();
             }
         }
         else if (this.gameObject.CompareTag("Enemy"))
         {
-            this.hp -= amount;
+            this.Hp -= amount;
             StartCoroutine(damageFeedback());
 
 
@@ -70,7 +76,7 @@ public class Health : MonoBehaviour
 
         
 
-        if (hp <= 0)
+        if (Hp <= 0)
         {
             this.GetComponent<SpriteRenderer>().color = Color.red;
             Die();
@@ -84,23 +90,29 @@ public class Health : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cannot have negative healing");
         }
 
-        bool wouldBeOverMaxHealth = hp + amount > maxHP;
+        bool wouldBeOverMaxHealth = Hp + amount > MaxHP;
         StartCoroutine(healFeedback());
         if (wouldBeOverMaxHealth)
         {
-            this.hp = maxHP;
+            this.Hp = MaxHP;
         }
         else
         {
-            this.hp += amount;
+            this.Hp += amount;
         }
     }
 
     private void Die()
     {
+        this.GetComponent<Actor>().Defeated = true;
         this.GetComponent<SpriteRenderer>().color = Color.red;
         Debug.Log("Dies");
-        levelChecker.GetComponent<CheckCleared>().EnemiesCleared += 1;
+        LevelChecker.GetComponent<CheckCleared>().EnemiesCleared += 1;
         gameObject.GetComponent<Actor>().EnterDefeatState();
+
+        
     }
+
+    
+
 }

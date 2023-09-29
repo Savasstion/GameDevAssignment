@@ -9,6 +9,8 @@ using UnityEngine.PlayerLoop;
 public class Player : Actor
 {
     [SerializeField]
+    GameObject restartLevel;
+    [SerializeField]
     bool isMelee = true;
     [SerializeField]
     private bool isInCombat;
@@ -35,7 +37,7 @@ public class Player : Actor
     public AudioSource shogunCocking;
     public Transform mousePos;
 
-
+    
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileSpeed = 1;
 
@@ -116,6 +118,10 @@ public class Player : Actor
     {
         if (Application.targetFrameRate != 60)
             Application.targetFrameRate = 60;
+
+        if (Defeated)
+            restartLevel.GetComponent<restartLevel>().Restart();
+
 
         //userInput
         AimDir = mousePos.position - transform.position;
