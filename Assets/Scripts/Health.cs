@@ -1,102 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+[Serializable]
+public class Health
 {
-    [SerializeField]
-    private float hp = 100;
-    [SerializeField]
-    private float maxHP = 100;
+    public float maxHealth;
+    public float health;
 
-    private void Start()
+    public void fullHealth()
     {
-        hp = 100;
-        maxHP = 100;
+        health = maxHealth;
     }
 
-    IEnumerator damageFeedback()
+    public void modifyHealth(float healthModifyValue)
     {
-        this.GetComponent<SpriteRenderer>().color = Color.red;
-        yield return new WaitForSeconds(.1f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+        health += healthModifyValue;
+
+        if (health > maxHealth)
+            health = maxHealth;
+
+        if (health < 0)
+            health = 0;
     }
 
-    public void Damage(float amount)
+    public bool isDead()
     {
-        if (amount < 0)
-        {
-            throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
-        }
-
-        
-
-        if (this.gameObject.CompareTag("Player"))
-        {
-            if (this.gameObject.GetComponent<Player>().IsInvulnerable)
-                this.hp -= 0;
-            else
-            {
-                StartCoroutine(this.gameObject.GetComponent<Player>().MakeInvulnerableAfterDamaged());
-                this.hp -= amount;
-                this.gameObject.GetComponent<Player>().HitFeedback();
-            }
-        }
-        else if (this.gameObject.CompareTag("Enemy"))
-        {
-            this.hp -= amount;
-            StartCoroutine(damageFeedback());
-
-
-        }
-
-        
-
-        if (hp <= 0)
-        {
-            this.GetComponent<SpriteRenderer>().color = Color.red;
-            Die();
-        }
-    }
-    IEnumerator healFeedback()
-    {
-        this.GetComponent<SpriteRenderer>().color = Color.green;
-        yield return new WaitForSeconds(.1f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(.1f);
-        this.GetComponent<SpriteRenderer>().color = Color.green;
-        yield return new WaitForSeconds(.1f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(.1f);
-        this.GetComponent<SpriteRenderer>().color = Color.green;
-        yield return new WaitForSeconds(.1f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-    }
-    public void Heal(float amount)
-    {
-        if (amount < 0)
-        {
-            throw new System.ArgumentOutOfRangeException("Cannot have negative healing");
-        }
-
-        bool wouldBeOverMaxHealth = hp + amount > maxHP;
-
-        if (wouldBeOverMaxHealth)
-        {
-            this.hp = maxHP;
-        }
-        else
-        {
-            this.hp += amount;
-        }
-
-        StartCoroutine(healFeedback());
-    }
-
-    private void Die()
-    {
-        this.GetComponent<SpriteRenderer>().color = Color.red;
-        Debug.Log("Dies");
-        gameObject.GetComponent<Actor>().EnterDefeatState();
+        return health <= 0;
     }
 }

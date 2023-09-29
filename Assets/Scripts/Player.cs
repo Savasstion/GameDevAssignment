@@ -1,248 +1,108 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
+using Weapon;
 
-public class Player : Actor
+public class Player : BaseCharacterBehaviour
 {
+    private bool _flipX;
+    private Transform targetTransform;
 
-    [SerializeField]
-    private bool isInCombat;
-    [SerializeField]
-    private bool isInMenu;
-
-    [SerializeField]
-    private Transform lastChkPointCoord;
-    [SerializeField]
-    private float defModifier;
-    [SerializeField]
-    private bool isAllowedDodge;
-    [SerializeField]
-    private Vector2 aimDir;
-
-    [SerializeField]
-    private short dashCount = 0, maxDashCount;
-    [SerializeField]
-    private float dashCoolDownTime;
-
-
-
-    public AudioSource audioSource;
-    public Transform mousePos;
-
-    private bool faceRight = true;
-
-    public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
-    public bool IsInMenu { get => isInMenu; set => isInMenu = value; }
-
-    public Transform LastChkPointCoord { get => lastChkPointCoord; set => lastChkPointCoord = value; }
-    public float DefModifier { get => defModifier; set => defModifier = value; }
-    public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
-    public Vector2 AimDir { get => aimDir; set => aimDir = value; }
-    public float iFrameDuration;
-
-    public new void BecomeVulnerable()
+    protected new void Awake()
     {
-        IsInvulnerable = false;
-        CancelInvoke("BecomeVulnerable");
+        base.Awake();
+        targetTransform = GetComponentInChildren<WeaponTarget>().transform;
+    }
+    
+    private new void Start()
+    {
+        base.Start();
     }
 
-    public IEnumerator MakeInvulnerableAfterDamaged()
+    private new void Update()
     {
-        IsInvulnerable = true;
-        yield return new WaitForSeconds(iFrameDuration);
-        IsInvulnerable = false;
-    }
-
-    void Start()
-    {
-
-
-        IsInvulnerable = false;
-        //audioSource = GetComponent<AudioSource>();
-
-
-
-    }
-
-    //limit frame rate
-    private void Awake()
-    {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-    }
-
-    private void Update()
-    {
-        if (Application.targetFrameRate != 60)
-            Application.targetFrameRate = 60;
-
-        //userInput
-        AimDir = mousePos.position - transform.position;
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable)
+        if(_firstRun)
+            base.Update();
+        
+        if (health.isDead() && !deathStatus)
         {
-            Attack(aimDir);
-
+            deathStatus = true;
+            kill();
+            
+            revive();
         }
 
-
-
-        if (Attacking)
+        else if (!deathStatus)
         {
-            Timer += Time.deltaTime;
-
-            if (Timer >= TimeToAttack)
+            if (PlayerInput.isFiring())
             {
-                Timer = 0;
-                Attacking = false;
-                AttackArea.SetActive(Attacking);
+                attack();
             }
 
-        }
+            if (PlayerInput.weaponSwitch())
+            {
+                cycleWeapon();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && (dashCount < maxDashCount) && IsInvulnerable == false)
+            if (PlayerInput.getPlayerInputVector().x < 0 && !_flipX)
+                flip();
+            else if (PlayerInput.getPlayerInputVector().x > 0 && _flipX)
+                flip();
+        }
+    }
+    
+    private void FixedUpdate()
+    {
+        if (!deathStatus)
         {
-
-            CancelInvoke("StartDashCD");
-
-            Dash(MoveDir);
-            //play sound
-            audioSource.Play();
-            Debug.Log("Player Dashed");
-            //play animation
-            Animator.SetTrigger("Dash");
-
-            dashCount++;
-            Debug.Log(dashCount);
-            //reset and start dash cooldown timer
-            Invoke("StartDashCD", dashCoolDownTime);
-
-            return;
+            move();
+            moveTarget(PlayerInput.getCursorPosToMouse());
         }
-
-        if (IsInvulnerable)
-        {
-            Invoke("BecomeVulnerable", 0.5f);
-            return;
-        }
-
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public override void move()
     {
-
-        Move();
-
-
+        characterMovement.move(PlayerInput.getPlayerInputVector());
     }
 
-
-
-
-    public override void Move()
+    public override void rotate()
     {
-        if (IsStunned)
-        {
-
-            Invoke("UnStunned", 0.5f);
-            return;
-        }
-
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-
-
-
-
-        //if looking right and clicked left(flip to the left)
-        //if (faceRight && horizontalInput < 0)
-        if (AimDir.x < 0)
-        {
-            transform.localScale = new Vector3(-(Mathf.Abs(transform.localScale.x)), transform.localScale.y, transform.localScale.z);
-
-            faceRight = false;
-
-
-        }
-        //if looking left and click right(flip to the right)
-        //else if (!faceRight && horizontalInput > 0)
-        else if (AimDir.x > 0)
-        {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-
-            faceRight = true;
-
-
-        }
-
-        //line 69 also got animation variable
-        Animator.SetFloat("playerDir", (int)AimDir.x);
-        Animator.SetInteger("xVelocity", (int)Rb.velocity.x);
-
-        //Debug.Log(AimDir.x);
-
-        MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
-        Rb.velocity = MoveDir * MoveSpeed;
-
+        characterMovement.rotate_to_point(PlayerInput.getCursorPosToMouse());
     }
 
+    // public override void cycleWeapon()
+    // {
+    //     currentWeapon = equipmentList.cycleWeapon();
+    //     displayedWeapon.UpdateWeapon(currentWeapon);
+    // }
 
-
-    public override void Attack(Vector2 aimDir)
+    public override void attack()
     {
-        //if using range weapons then need to use attackDr
-        Animator.SetTrigger("Attack");
-
-        Debug.Log("Attack Anim triggered");
-
-        //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
-
-
-
-
-        Attacking = true;
-        AttackArea.SetActive(Attacking);
-        Debug.Log("Attacking");
-        //Debug.Log("Enemy layermask = "+LayerMask.NameToLayer("Enemy"));
-
+        weaponAttack.attack(currentWeapon, targetTransform, true);
     }
 
-    public void StartDashCD()
+    public void flip()
     {
-        dashCount = 0;
-        Debug.Log(dashCount);
+        _flipX = !_flipX;
+        _spriteRenderer.flipX = _flipX;
+
+        // transform.localScale = Vector3.Scale(transform.localScale ,new Vector3(-1f, 1f, 1f));
+    }
+    
+    public override void kill()
+    {
+        base.kill();
+        Debug.Log("Player Dead");
     }
 
-    public void HitFeedback()
-    {
-        StartCoroutine(StartBlinking());
-    }
 
-    IEnumerator StartBlinking()
-    {
-        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(iFrameDuration / 9f);
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-    }
+
+    // private void OnDrawGizmos()
+    // {
+    //     if (currentWeapon.getWeaponType() == "Hitbox")
+    //     {
+    //         Hitbox hBox = (Hitbox)currentWeapon;
+    //         Gizmos.DrawWireSphere(transform.position + new Vector3(hBox.offsetFromCenter.x, hBox.offsetFromCenter.y, 0), hBox.circleScale);
+    //     }
+    // }
 }
