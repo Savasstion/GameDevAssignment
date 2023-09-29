@@ -213,6 +213,8 @@ public class Player : Actor
         StartCoroutine(StartBlinking());
     }
 
+
+
     IEnumerator StartBlinking() 
     {
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
