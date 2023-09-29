@@ -108,18 +108,18 @@ public class Turret : Enemy
 
     public override void AlertAllEnemies()
     {
-        throw new System.NotImplementedException();
+
     }
 
    
 
     public override void Move()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public override void UpdateQuest()
     {
-        throw new System.NotImplementedException();
+
     }
 }
