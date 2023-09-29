@@ -22,6 +22,10 @@ public class CheckCleared : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Escape))
+            Application.Quit();
+
+
         if (enemiesCleared >= totalEnemies)
             levelCleared = true;
         else
