@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -7,7 +8,8 @@ using UnityEngine.PlayerLoop;
 
 public class Player : Actor
 {
-
+    [SerializeField]
+    bool isMelee = true;
     [SerializeField]
     private bool isInCombat;
     [SerializeField]
@@ -59,7 +61,7 @@ public class Player : Actor
     void Start()
     {
 
-
+        isMelee = true;
         IsInvulnerable = false;
         //audioSource = GetComponent<AudioSource>();
 
@@ -82,15 +84,21 @@ public class Player : Actor
         //userInput
         AimDir = mousePos.position - transform.position;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable)
+        if (Input.GetKeyDown(KeyCode.R)) 
         {
-            Attack(aimDir);
-
+            isMelee = !isMelee;
         }
 
 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable && isMelee)
+        {
+            Attack(aimDir);
 
-        if (Attacking)
+        }else if (Input.GetKeyDown(KeyCode.Mouse0) && !isMelee)
+            Attack(aimDir);
+
+
+        if (Attacking && isMelee)
         {
             Timer += Time.deltaTime;
 
@@ -181,7 +189,7 @@ public class Player : Actor
         }
 
         //line 69 also got animation variable
-        Animator.SetFloat("playerDir", (int)AimDir.x);
+        Animator.SetFloat("playerDir", (int)Math.Ceiling(AimDir.x));
         Animator.SetInteger("xVelocity", (int)Rb.velocity.x);
 
         //Debug.Log(AimDir.x);
@@ -195,20 +203,27 @@ public class Player : Actor
 
     public override void Attack(Vector2 aimDir)
     {
-        //if using range weapons then need to use attackDr
-        Animator.SetTrigger("Attack");
+        if (isMelee)
+        {
+            //if using range weapons then need to use attackDr
+            Animator.SetTrigger("Attack");
 
-        Debug.Log("Attack Anim triggered");
+            Debug.Log("Attack Anim triggered");
 
-        //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
-
-
+            //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
 
 
-        Attacking = true;
-        AttackArea.SetActive(Attacking);
-        Debug.Log("Attacking");
-        //Debug.Log("Enemy layermask = "+LayerMask.NameToLayer("Enemy"));
+
+
+            Attacking = true;
+            AttackArea.SetActive(Attacking);
+            Debug.Log("Attacking");
+            //Debug.Log("Enemy layermask = "+LayerMask.NameToLayer("Enemy"));
+        }
+        else
+        { 
+        
+        }
 
     }
 
