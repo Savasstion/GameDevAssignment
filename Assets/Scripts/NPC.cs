@@ -11,7 +11,7 @@ public abstract class NPC : Actor
     [SerializeField]
     private int questID;
 
-    public abstract void StartConvo();
+    public void StartConvo() { }
     public abstract void UpdateQuest();
 
 }
