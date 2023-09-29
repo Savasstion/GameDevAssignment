@@ -205,18 +205,18 @@ public class RangeAI : Enemy
 
     public override void AlertAllEnemies()
     {
-        throw new System.NotImplementedException();
+      
     }
 
     public override void Attack(Vector2 aimDir)
     {
-        throw new System.NotImplementedException();
+
     }
 
   
     public override void UpdateQuest()
     {
-        throw new System.NotImplementedException();
+
     }
 
 }
