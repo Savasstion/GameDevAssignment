@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/A Scenes/Home.unity
     guid: bab74a791da32594293aa5b736fa6f32
   - enabled: 1
-    path: Assets/A Scenes/LAB.unity
+    path: Assets/A Scenes/level3.unity
     guid: 070b5dfdcb2da0647a9166163b95fa46
   - enabled: 1
-    path: Assets/A Scenes/Office.unity
+    path: Assets/A Scenes/level2.unity
     guid: e9905467ed3669e41b275f842c1e5105
   m_configObjects: {}

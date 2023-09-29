@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConfirmQuit : MonoBehaviour
 {
@@ -15,4 +16,16 @@ public class ConfirmQuit : MonoBehaviour
     {
         
     }
+
+
+    public void Yes()
+    {
+        Application.Quit();
+    }
+
+    public void No()
+    {
+        SceneManager.LoadScene("Start Menu");
+    }
+
 }

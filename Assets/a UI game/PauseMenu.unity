@@ -750,7 +750,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 360767735}
         m_TargetAssemblyTypeName: PauseMenuScript, Assembly-CSharp
-        m_MethodName: ConfirmQuit
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
