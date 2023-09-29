@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 3713312004203442102}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6200690805001220608
 SpriteRenderer:
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3713312004203442102}
   - component: {fileID: 6657391515076540976}
-  - component: {fileID: 6057727259293777108}
+  - component: {fileID: 4416493825013321670}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -203,7 +203,7 @@ CircleCollider2D:
   m_Offset: {x: 0.00000019073487, y: 0}
   serializedVersion: 2
   m_Radius: 0.15865116
---- !u!114 &6057727259293777108
+--- !u!114 &4416493825013321670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5204635115215136311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58813e5eb5c9304db5438204db5281f, type: 3}
+  m_Script: {fileID: 11500000, guid: 18c2634e98846dc468500949039df7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100

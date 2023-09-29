@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 2473354954034900018}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &1711525966370788776
 SpriteRenderer:
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2473354954034900018}
   - component: {fileID: 3195695482188995594}
-  - component: {fileID: 834230462608044211}
+  - component: {fileID: 6676661804613490436}
   m_Layer: 0
   m_Name: BulletCollider
   m_TagString: Untagged
@@ -181,7 +181,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.025
---- !u!114 &834230462608044211
+--- !u!114 &6676661804613490436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6233708959506127021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58813e5eb5c9304db5438204db5281f, type: 3}
+  m_Script: {fileID: 11500000, guid: 18c2634e98846dc468500949039df7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 45

@@ -22,6 +22,22 @@ public class Health : MonoBehaviour
         this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
+    IEnumerator healFeedback()
+    {
+        this.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+
+    }
+
     public void Damage(float amount)
     {
         if (amount < 0)
@@ -67,7 +83,7 @@ public class Health : MonoBehaviour
         }
 
         bool wouldBeOverMaxHealth = hp + amount > maxHP;
-
+        StartCoroutine(healFeedback());
         if (wouldBeOverMaxHealth)
         {
             this.hp = maxHP;
