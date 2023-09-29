@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3412322988111772915}
   - component: {fileID: 8004796464709289809}
   m_Layer: 0
-  m_Name: LIFT
+  m_Name: LIFT - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
