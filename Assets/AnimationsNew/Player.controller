@@ -652,9 +652,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 7
     m_ConditionEvent: xVelocity
     m_EventTreshold: 0
-  - m_ConditionMode: 7
-    m_ConditionEvent: playerDir
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6359753086218762712}
   m_Solo: 0

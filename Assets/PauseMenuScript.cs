@@ -33,15 +33,19 @@ public class PauseMenuScript : MonoBehaviour
 
     public void BackTMMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
     }
 
 
     public void Quit()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 6);
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+        
     }
 
+    public void ConfirmQuit()
+    {
+
+    }
 
 }
