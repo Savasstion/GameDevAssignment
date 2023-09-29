@@ -301,7 +301,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8686783529126194042}
-  - component: {fileID: 4709532106411938886}
   m_Layer: 0
   m_Name: WeaponSystem
   m_TagString: Untagged
@@ -325,18 +324,59 @@ Transform:
   m_Father: {fileID: 1680443638623858194}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4709532106411938886
+--- !u!1 &4115279199121965395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8536635417012898443}
+  - component: {fileID: 1302000171325594569}
+  m_Layer: 0
+  m_Name: Enhance Agility
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8536635417012898443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4115279199121965395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 662330610376790930}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1302000171325594569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3833566065449528709}
+  m_GameObject: {fileID: 4115279199121965395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d684a2d3ecffe46b6b1887dd7f8c31, type: 3}
+  m_Script: {fileID: 11500000, guid: 155be2820e18e0f409eeed500d13c9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillCastTime: 0
+  skillCastCost: 1
+  skillCastDelayTime: 0
+  isUnlock: 1
+  expCost: 5
+  playerGameObj: {fileID: 9108675271459903759}
+  newMaxDodgeCount: 10
+  newMoveSpeed: 5
+  buffDuration: 10
 --- !u!1 &4314023952289882508
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +410,7 @@ Transform:
   - {fileID: 795182147474146046}
   - {fileID: 7048570445602839163}
   - {fileID: 4193559846639284389}
+  - {fileID: 8536635417012898443}
   m_Father: {fileID: 1680443638623858194}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -393,6 +434,7 @@ MonoBehaviour:
   healSelf: {fileID: 2020343568630900601}
   lightningBall: {fileID: 1530682720012330137}
   repellSkill: {fileID: 8443386162975828911}
+  speedDemon: {fileID: 1302000171325594569}
 --- !u!1 &4401161898380324691
 GameObject:
   m_ObjectHideFlags: 0

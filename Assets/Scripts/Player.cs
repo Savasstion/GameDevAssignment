@@ -50,8 +50,16 @@ public class Player : Actor
     public float DefModifier { get => defModifier; set => defModifier = value; }
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
     public Vector2 AimDir { get => aimDir; set => aimDir = value; }
+    public short MaxDashCount { get => maxDashCount; set => maxDashCount = value; }
+
     public float iFrameDuration;
 
+    IEnumerator DashFeedback()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        yield return new WaitForSeconds(.5f);
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
 
     IEnumerator ShootBurst()
     {
@@ -138,12 +146,13 @@ public class Player : Actor
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && (dashCount < maxDashCount) && IsInvulnerable == false)
+        if (Input.GetKeyDown(KeyCode.Space) && (dashCount < MaxDashCount) && IsInvulnerable == false)
         {
 
             CancelInvoke("StartDashCD");
 
             Dash(MoveDir);
+            StartCoroutine(DashFeedback());
             //play sound
             audioSource.Play();
             Debug.Log("Player Dashed");

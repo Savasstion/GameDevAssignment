@@ -52,6 +52,7 @@ public abstract class Actor : MonoBehaviour
     public bool Defeated { get => defeated; set => defeated = value; }
     public Animator Animator { get => animator; set => animator = value; }
 
+
     public abstract void Move();
 
 

@@ -23,12 +23,13 @@ public class SkillSystem : MonoBehaviour
     private ProjectileSkill lightningBall;
     [SerializeField]
     private RepellSkill repellSkill;
+    [SerializeField] SpeedDemonSkill speedDemon;
     private void Start()
     {
         equippedSkills.Add(grenade);
         equippedSkills.Add(healSelf);
         equippedSkills.Add(lightningBall);
-        equippedSkills.Add(repellSkill);
+        equippedSkills.Add(speedDemon);
     }
 
     private void Update()
