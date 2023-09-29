@@ -15,6 +15,7 @@ public class RangeAI : Enemy
     [SerializeField] Vector2 playerDir;
     Collider2D playerCollider;
     Transform closestAllyTransform;
+
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileSpeed = 1;
     [SerializeField] float projectileMaxSpeed = 4;

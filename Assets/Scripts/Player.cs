@@ -34,6 +34,13 @@ public class Player : Actor
     public AudioSource audioSource;
     public Transform mousePos;
 
+
+    [SerializeField] GameObject projectile;
+    [SerializeField] float projectileSpeed = 1;
+
+    [SerializeField] float atkCooldown = 3f;
+
+    private bool inCoolDown;
     private bool faceRight = true;
 
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
@@ -44,6 +51,26 @@ public class Player : Actor
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
     public Vector2 AimDir { get => aimDir; set => aimDir = value; }
     public float iFrameDuration;
+
+
+    IEnumerator ShootBurst()
+    {
+        inCoolDown = true;
+        Vector3 Position = new Vector3(transform.position.x,
+                                       transform.position.y ,
+                                       0);
+
+        
+            var projectileInstance = Instantiate(projectile,
+                        Position,
+                        Quaternion.identity);
+
+            projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * projectileSpeed;
+
+        
+        yield return new WaitForSeconds(atkCooldown);
+        inCoolDown = false;
+    }
 
     public new void BecomeVulnerable()
     {
@@ -60,7 +87,7 @@ public class Player : Actor
 
     void Start()
     {
-
+        inCoolDown = false;
         isMelee = true;
         IsInvulnerable = false;
         //audioSource = GetComponent<AudioSource>();
@@ -94,7 +121,7 @@ public class Player : Actor
         {
             Attack(aimDir);
 
-        }else if (Input.GetKeyDown(KeyCode.Mouse0) && !isMelee)
+        }else if (Input.GetKeyDown(KeyCode.Mouse0) && !isMelee && !inCoolDown)
             Attack(aimDir);
 
 
@@ -190,7 +217,7 @@ public class Player : Actor
 
         //line 69 also got animation variable
         Animator.SetFloat("playerDir", (int)Math.Ceiling(AimDir.x));
-        Animator.SetInteger("xVelocity", (int)Rb.velocity.x);
+        Animator.SetInteger("xVelocity", (int)Rb.velocity.magnitude);
 
         //Debug.Log(AimDir.x);
 
@@ -221,8 +248,8 @@ public class Player : Actor
             //Debug.Log("Enemy layermask = "+LayerMask.NameToLayer("Enemy"));
         }
         else
-        { 
-        
+        {
+            StartCoroutine(ShootBurst());
         }
 
     }

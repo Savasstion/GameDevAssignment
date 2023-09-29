@@ -802,6 +802,7 @@ MonoBehaviour:
   dashDistance: 10
   defeated: 0
   animator: {fileID: 7426976953821704167}
+  isMelee: 1
   isInCombat: 0
   isInMenu: 0
   lastChkPointCoord: {fileID: 0}
@@ -813,6 +814,9 @@ MonoBehaviour:
   dashCoolDownTime: 1.5
   audioSource: {fileID: 1467951013371033103}
   mousePos: {fileID: 0}
+  projectile: {fileID: 0}
+  projectileSpeed: 15
+  atkCooldown: 0.2
   iFrameDuration: 1.5
 --- !u!82 &1467951013371033103
 AudioSource:
