@@ -15,13 +15,7 @@ public class GrenadeSkill : PlacementSkill
     private int amountExploded = 0;
     public GameObject explosions;
 
-    private void Update()
-    {
-
-
-
-
-    }
+   
 
     public override void CastSkill()
     {
@@ -41,7 +35,7 @@ public class GrenadeSkill : PlacementSkill
         amountExploded++;
         for (int i = 0; i < enemyCollider.Length; i++)
         {
-            rb = enemyCollider[i].attachedRigidbody;
+            rb = enemyCollider[i].gameObject.GetComponent<Actor>().Rb;
 
             if (rb != null)
             {
