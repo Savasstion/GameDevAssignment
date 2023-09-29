@@ -63,7 +63,7 @@ public abstract class Actor : MonoBehaviour
         rb.velocity = Vector2.zero;
 
         IsInvulnerable = true;
-        rb.AddForce(dashDir.normalized * DashDistance, ForceMode2D.Impulse);
+        rb.AddForce(dashDir.normalized * DashDistance , ForceMode2D.Impulse);
 
 
     }

@@ -130,7 +130,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -150,7 +150,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -227,6 +227,12 @@ MonoBehaviour:
     m_Bits: 128
   unitsToHideBehindEnemy: 2
   playerDir: {x: 0, y: 0}
+  projectile: {fileID: 2922570352624338083, guid: 87c64c3965d8d564494ab32ef195d978, type: 3}
+  projectileSpeed: 5
+  projectileMaxSpeed: 4
+  atkCooldown: 3
+  fireRate: 0.3333333
+  burstAmount: 3
 --- !u!1 &3760966459702931353
 GameObject:
   m_ObjectHideFlags: 0

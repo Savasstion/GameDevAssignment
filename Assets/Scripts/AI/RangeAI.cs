@@ -15,14 +15,40 @@ public class RangeAI : Enemy
     [SerializeField] Vector2 playerDir;
     Collider2D playerCollider;
     Transform closestAllyTransform;
+    [SerializeField] GameObject projectile;
+    [SerializeField] float projectileSpeed = 1;
+    [SerializeField] float projectileMaxSpeed = 4;
+    [SerializeField] float atkCooldown = 3f;
+    [SerializeField] float fireRate = 1f / 5f;
+    [SerializeField] float burstAmount = 5;
+    private bool inCoolDown;
+
+    IEnumerator ShootBurst()
+    {
+        inCoolDown = true;
+        Vector3 Position = new Vector3(transform.position.x,
+                                       transform.position.y + .169f,
+                                       0);
+        for (int i = 0; i < burstAmount; i++)
+        {
+            var projectileInstance = Instantiate(projectile,
+                        Position,
+                        Quaternion.identity);
+            playerDir = new Vector2(playerCollider.transform.position.x - transform.position.x, playerCollider.transform.position.y - transform.position.y);
+            projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = playerDir.normalized * projectileSpeed ; 
+            yield return new WaitForSeconds(fireRate);
+        }
+        yield return new WaitForSeconds(Random.Range(atkCooldown - .5f, atkCooldown + .5f));
+        inCoolDown = false;
+    }
 
     void Start()
     {
         InvokeRepeating(nameof(DetectPlayerCollider), 0, 0);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
 
         if (playerDir.x < 0)
@@ -43,6 +69,14 @@ public class RangeAI : Enemy
             if (playerCollider != null && !IsStunned)
             {
                 playerDir = (playerCollider.transform.position - transform.position);
+                //attack
+
+                if (inCoolDown == false && playerCollider != null && !IsStunned)
+                {
+
+                    inCoolDown = true;
+                    StartCoroutine(ShootBurst());
+                }
 
 
                 //movement
