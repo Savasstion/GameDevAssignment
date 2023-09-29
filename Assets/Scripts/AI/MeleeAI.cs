@@ -60,7 +60,7 @@ public class MeleeAI : Enemy
     //}
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         
 

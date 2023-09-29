@@ -1,61 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Turret : Enemy
 {
-    [SerializeField] Rigidbody2D projectile;
+    [SerializeField] GameObject projectile;
     [SerializeField] LayerMask playerLayerMask, obstaclesLayerMask; //obstaclesLayerMask should be both player and obstacles
-    [SerializeField] Transform gunBarrel;
-    [SerializeField] Collider2D playerCollider;
+     Collider2D playerCollider;
     [SerializeField] float detectionRange, projectileSpeed = 1;
     [SerializeField] float atkCooldown = 3f;
-    [SerializeField] float fireRate = 1f / 15f;
-    private bool allowedToFire = true;
-
-    IEnumerator FireBurst() 
+    [SerializeField] float fireRate = 1f / 5f;
+    [SerializeField] float burstAmount = 5;
+    private bool inCoolDown;
+    private Vector2 aimDir;
+    IEnumerator ShootBurst()
     {
-        allowedToFire = false;
-        for (int i = 0; i < 15; i++)
+        inCoolDown = true;
+        Vector3 Position = new Vector3(transform.position.x,
+                                       transform.position.y + .169f,
+                                       0);
+        for (int i = 0; i < burstAmount; i++)
         {
-            Attack(playerCollider.transform.position - transform.position);
-            yield return new WaitForSeconds(fireRate); // 15 shots per second
+            var projectileInstance = Instantiate(projectile,
+                        Position,
+                        Quaternion.identity);
+            aimDir = new Vector2(playerCollider.transform.position.x - transform.position.x, playerCollider.transform.position.y - transform.position.y);
+            projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * projectileSpeed; 
+            yield return new WaitForSeconds(fireRate);
         }
-        yield return new WaitForSeconds(atkCooldown);
-        allowedToFire = true;
+        yield return new WaitForSeconds(Random.Range(atkCooldown - .5f, atkCooldown + .5f));
+        inCoolDown = false;
     }
 
+    private void Update()
+    {
+        if(aimDir.x < 0)
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        else
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+    }
+
+    private void Start()
+    {
+        inCoolDown = false;
+        IsStunned = false;
+        InvokeRepeating(nameof(DetectPlayerCollider), 0, 0);
+       
+    }
     public override void Attack(Vector2 aimDir)
     {
-        Rigidbody2D projectileInstance;
-        projectileInstance = Instantiate(projectile, gunBarrel.position, gunBarrel.rotation) as Rigidbody2D;
-        projectileInstance.velocity = aimDir.normalized * projectileSpeed;
+
+        throw new System.NotImplementedException();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        DetectPlayerCollider();
-
-
-        if (allowedToFire)
+        if (!CheckIfDefeated())
         {
-            StartCoroutine(FireBurst());
-
-        }
-
-        if (Attacking)
-        {
-            Timer += Time.deltaTime;
-
-            if (Timer >= TimeToAttack)
+            if (IsStunned)
             {
-                Timer = 0;
-                Attacking = false;
-                AttackArea.SetActive(Attacking);
+
+                Invoke(nameof(UnStunned), 0.5f);
+                return;
             }
 
+
+            if (inCoolDown == false && playerCollider != null && !IsStunned)
+            {
+                
+                inCoolDown = true;
+                StartCoroutine(ShootBurst());
+            }
         }
     }
     void DetectPlayerCollider()

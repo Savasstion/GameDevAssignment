@@ -22,6 +22,6 @@ public class ZombieController : MonoBehaviour
     void goToPlayer() {
         toPlayerVec = (GameObject.FindGameObjectWithTag("Player").transform.position) - transform.position;
 
-        transform.Translate(toPlayerVec * Time.deltaTime * moveSpeed);
+        transform.Translate(toPlayerVec * moveSpeed);
     }
 }

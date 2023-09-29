@@ -724,8 +724,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.030014934, y: -0.11983864}
-  m_Size: {x: 0.32592767, y: 0.5573619}
+  m_Offset: {x: -0.030014934, y: -0.08449399}
+  m_Size: {x: 0.32592767, y: 0.62805086}
   m_Direction: 0
 --- !u!114 &7556285220517116567
 MonoBehaviour:
@@ -743,11 +743,11 @@ MonoBehaviour:
   attackArea: {fileID: 2869575075254601189}
   timeToAttack: 0.25
   isInvulnerable: 0
-  moveSpeed: 4
+  moveSpeed: 5
   moveDir: {x: 0, y: 0}
   isStunned: 0
   rb: {fileID: 1394475882324320674}
-  dashDistance: 5
+  dashDistance: 10
   defeated: 0
   animator: {fileID: 7426976953821704167}
   isInCombat: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
   isAllowedDodge: 0
   aimDir: {x: 0, y: 0}
   dashCount: 0
-  maxDashCount: 2
+  maxDashCount: 3
   dashCoolDownTime: 1.5
   audioSource: {fileID: 1467951013371033103}
   mousePos: {fileID: 0}

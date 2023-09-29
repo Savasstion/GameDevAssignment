@@ -223,7 +223,7 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0}
   isStunned: 0
   rb: {fileID: 8444580454424817888}
-  dashDistance: 500
+  dashDistance: 450
   defeated: 0
   animator: {fileID: 7831166232986455983}
   isHostile: 1

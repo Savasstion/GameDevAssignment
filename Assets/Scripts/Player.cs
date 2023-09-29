@@ -66,27 +66,35 @@ public class Player : Actor
        
 
     }
-    
- 
-    
-    // Update is called once per frame
-    void Update()
-    { 
-        AimDir = mousePos.position - transform.position;
 
-        Move();
+    //limit frame rate
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
+
+    private void Update()
+    {
+        if(Application.targetFrameRate != 60)
+            Application.targetFrameRate = 60;
+
+        //userInput
+        AimDir = mousePos.position - transform.position;
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable)
         {
             Attack(aimDir);
-            
+
         }
 
-        if (Attacking) 
+
+
+        if (Attacking)
         {
             Timer += Time.deltaTime;
 
-            if (Timer >= TimeToAttack) 
+            if (Timer >= TimeToAttack)
             {
                 Timer = 0;
                 Attacking = false;
@@ -95,9 +103,8 @@ public class Player : Actor
 
         }
 
-
         if (Input.GetKeyDown(KeyCode.Space) && (dashCount < maxDashCount) && IsInvulnerable == false)
-        { 
+        {
 
             CancelInvoke("StartDashCD");
 
@@ -117,17 +124,20 @@ public class Player : Actor
         }
 
         if (IsInvulnerable)
-        { 
+        {
             Invoke("BecomeVulnerable", 0.5f);
             return;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Mouse0) && !IsInvulnerable && !IsStunned)
-        //{  
-        //    Attack(MoveDir);
-        //}
+    }
 
+    // Update is called once per frame
+    void FixedUpdate()
+    { 
 
+        Move();
+
+   
     }
     
 
