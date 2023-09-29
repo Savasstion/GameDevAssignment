@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/a UI game/ComfirmQuit.unity
     guid: dd3b4c6434788124c9217cf1d6c4600e
   - enabled: 1
-    path: Assets/A Scenes/Home.unity
-    guid: bab74a791da32594293aa5b736fa6f32
+    path: Assets/A Scenes/Story1.unity
+    guid: f6bb72e73d7765640a2905edb1cb9efe
   - enabled: 1
     path: Assets/A Scenes/Story2.unity
     guid: a9e27f51ecfb2bc409131be7bbebfac9
@@ -30,24 +30,24 @@ EditorBuildSettings:
     path: Assets/A Scenes/Story3.unity
     guid: 82a30c76ccab1744681b26b182289a63
   - enabled: 1
-    path: Assets/A Scenes/level 1.unity
-    guid: 95f77b6a0497f20448a1a6e6d19fd675
-  - enabled: 1
     path: Assets/A Scenes/Story4.unity
     guid: 09d5a7f29e07f104c82d1b05e16b8dfa
   - enabled: 1
+    path: Assets/A Scenes/level 1.unity
+    guid: 95f77b6a0497f20448a1a6e6d19fd675
+  - enabled: 0
     path: Assets/A Scenes/LAB.unity
     guid: 070b5dfdcb2da0647a9166163b95fa46
   - enabled: 1
-    path: Assets/A Scenes/Story1.unity
-    guid: f6bb72e73d7765640a2905edb1cb9efe
-  - enabled: 1
     path: Assets/A Scenes/level2.unity
-    guid: e9905467ed3669e41b275f842c1e5105
+    guid: 683e0be43cefe754bb5661752685bebf
+  - enabled: 1
+    path: Assets/A Scenes/level3.unity
+    guid: d8455781c1783a246b37ce7561384bfb
   - enabled: 1
     path: Assets/A Scenes/End Story.unity
     guid: ddf0b8027976a2d4fa4b7528e67f473b
   - enabled: 1
-    path: Assets/A Scenes/level3.unity
-    guid: d8455781c1783a246b37ce7561384bfb
+    path: Assets/A Scenes/Home.unity
+    guid: 47040ea7a1232c64c8eefc4aed1f82eb
   m_configObjects: {}
