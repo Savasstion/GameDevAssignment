@@ -17,53 +17,27 @@ public class SkillSystem : MonoBehaviour
     public List<Skill> equippedSkills;
     [SerializeField]
     private GrenadeSkill grenade;
-    [SerializeField]
-    private HealSelf healSelf;
-    [SerializeField]
-    private ProjectileSkill lightningBall;
-    [SerializeField]
-    private RepellSkill repellSkill;
-    [SerializeField] SpeedDemonSkill speedDemon;
+
     private void Start()
     {
         equippedSkills.Add(grenade);
-        equippedSkills.Add(healSelf);
-        equippedSkills.Add(lightningBall);
-        equippedSkills.Add(speedDemon);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && equippedSkills[0].SkillCastCost <= skillSlot && equippedSkills[0] != null)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("1 Pressed");
-            skillSlot -= equippedSkills[0].SkillCastCost;
             equippedSkills[0].CastSkill();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && equippedSkills[1].SkillCastCost <= skillSlot && equippedSkills[1] != null)
-        {
-            Debug.Log("2 Pressed");
-            skillSlot -= equippedSkills[1].SkillCastCost;
-            equippedSkills[1].CastSkill();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && equippedSkills[2].SkillCastCost <= skillSlot && equippedSkills[2] != null)
-        {
-            Debug.Log("3 Pressed");
-            skillSlot -= equippedSkills[2].SkillCastCost;
-            equippedSkills[2].CastSkill();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && equippedSkills[3].SkillCastCost <= skillSlot && equippedSkills[3] != null)
-        {
-            Debug.Log("4 Pressed");
-            skillSlot -= equippedSkills[3].SkillCastCost;
-            equippedSkills[3].CastSkill();
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5) && equippedSkills[4].SkillCastCost <= skillSlot && equippedSkills[4] != null)
-        {
-            Debug.Log("5 Pressed");
-            skillSlot -= equippedSkills[4].SkillCastCost;
-            equippedSkills[4].CastSkill();
-        }
+        //else if (Input.GetKeyDown(KeyCode.Alpha2))
+        //    equippedSkills[1].CastSkill();
+        //else if (Input.GetKeyDown(KeyCode.Alpha3))
+        //    equippedSkills[2].CastSkill();
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //    equippedSkills[3].CastSkill();
+        //else if (Input.GetKeyDown(KeyCode.Alpha5))
+        //    equippedSkills[4].CastSkill();
     }
 
     public void equipSkill(Skill skill)

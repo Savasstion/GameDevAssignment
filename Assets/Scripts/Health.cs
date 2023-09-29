@@ -1,32 +1,87 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Health
+public class Health : MonoBehaviour
 {
-    public float maxHealth;
-    public float health;
+    [SerializeField]
+    private float hp = 100;
+    [SerializeField]
+    private float maxHP = 100;
 
-    public void fullHealth()
+    private void Start()
     {
-        health = maxHealth;
+        hp = 100;
+        maxHP = 100;
     }
 
-    public void modifyHealth(float healthModifyValue)
+    IEnumerator damageFeedback()
     {
-        health += healthModifyValue;
-
-        if (health > maxHealth)
-            health = maxHealth;
-
-        if (health < 0)
-            health = 0;
+        this.GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public bool isDead()
+    public void Damage(float amount)
     {
-        return health <= 0;
+        if (amount < 0)
+        {
+            throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
+        }
+
+        
+
+        if (this.gameObject.CompareTag("Player"))
+        {
+            if (this.gameObject.GetComponent<Player>().IsInvulnerable)
+                this.hp -= 0;
+            else
+            {
+                StartCoroutine(this.gameObject.GetComponent<Player>().MakeInvulnerableAfterDamaged());
+                this.hp -= amount;
+                this.gameObject.GetComponent<Player>().HitFeedback();
+            }
+        }
+        else if (this.gameObject.CompareTag("Enemy"))
+        {
+            this.hp -= amount;
+            StartCoroutine(damageFeedback());
+
+
+        }
+
+        
+
+        if (hp <= 0)
+        {
+            this.GetComponent<SpriteRenderer>().color = Color.red;
+            Die();
+        }
+    }
+
+    public void Heal(float amount)
+    {
+        if (amount < 0)
+        {
+            throw new System.ArgumentOutOfRangeException("Cannot have negative healing");
+        }
+
+        bool wouldBeOverMaxHealth = hp + amount > maxHP;
+
+        if (wouldBeOverMaxHealth)
+        {
+            this.hp = maxHP;
+        }
+        else
+        {
+            this.hp += amount;
+        }
+    }
+
+    private void Die()
+    {
+        this.GetComponent<SpriteRenderer>().color = Color.red;
+        Debug.Log("Dies");
+        gameObject.GetComponent<Actor>().EnterDefeatState();
     }
 }

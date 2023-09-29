@@ -17,25 +17,30 @@ public class MainMenuSelected : MonoBehaviour
         
     }
 
+    public void Continue()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
+    }
+
     public void NewGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
     }
     public void Setting()
     {
-        SceneManager.LoadScene("Setting Menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
     public void Guide()
     {
-        SceneManager.LoadScene("Guide");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
     public void Quit()
     {
-        SceneManager.LoadScene("ComfirmQuit");
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 6);
+        Application.Quit();
     }
 
 }

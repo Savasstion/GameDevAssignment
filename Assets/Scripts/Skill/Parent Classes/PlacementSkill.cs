@@ -19,8 +19,8 @@ public abstract class PlacementSkill : Skill
 
     public float SkillRadius { get => skillRadius; set => skillRadius = value; }
 
-    public Collider2D[] getEnemyCollider(Vector2 centerPoint) {
-        return Physics2D.OverlapCircleAll(centerPoint, skillRadius, enemyLayerMask);
+    public Collider2D[] getEnemyCollider() {
+        return Physics2D.OverlapCircleAll(skillPos.position, skillRadius, enemyLayerMask);
 
     }
 

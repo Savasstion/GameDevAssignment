@@ -65,7 +65,7 @@ public class MeleeAI : Enemy
 
 
 
-        if (!CheckIfDefeated() && player != null)
+        if (!CheckIfDefeated())
         {
             Move();
 

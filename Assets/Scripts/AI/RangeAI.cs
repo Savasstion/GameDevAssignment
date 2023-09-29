@@ -15,7 +15,6 @@ public class RangeAI : Enemy
     [SerializeField] Vector2 playerDir;
     Collider2D playerCollider;
     Transform closestAllyTransform;
-
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileSpeed = 1;
     [SerializeField] float projectileMaxSpeed = 4;
@@ -45,24 +44,29 @@ public class RangeAI : Enemy
 
     void Start()
     {
-        IsStunned = false;
-        inCoolDown = false;
         InvokeRepeating(nameof(DetectPlayerCollider), 0, 0);
-        
     }
 
 
     void FixedUpdate()
     {
 
+        if (playerDir.x < 0)
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        else
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
-        Rb.velocity = Vector2.zero;
 
         if (!CheckIfDefeated())
         {
-            
+            if (IsStunned)
+            {
 
-            if (playerCollider != null)
+                Invoke(nameof(UnStunned), 0.5f);
+                return;
+            }
+
+            if (playerCollider != null && !IsStunned)
             {
                 playerDir = (playerCollider.transform.position - transform.position);
                 //attack
@@ -74,41 +78,21 @@ public class RangeAI : Enemy
                     StartCoroutine(ShootBurst());
                 }
 
-                Move();
 
-
+                //movement
+                if (playerDir.magnitude <= runAwayThreshold)
+                {
+                    Rb.velocity = Vector2.zero;
+                    closestAllyTransform = DetectAllies();
+                    if (closestAllyTransform != null)
+                    {
+                        MoveToDir(new Vector2((closestAllyTransform.position.x - playerCollider.transform.position.x),
+                            (closestAllyTransform.position.y - playerCollider.transform.position.y)));
+                    }
+                    else
+                        MoveToDir(GetAwayFromPlayerDir(playerCollider));
+                }
             }
-        }
-    }
-
-    public override void Move()
-    {
-        if (IsStunned)
-        {
-
-            Invoke(nameof(UnStunned), 1f);
-            return;
-        }
-
-
-        if (playerDir.x < 0)
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        else
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
-
-
-        //movement
-        if (playerDir.magnitude <= runAwayThreshold && !IsStunned)
-        {
-
-            closestAllyTransform = DetectAllies();
-            if (closestAllyTransform != null && !IsStunned)
-            {
-                MoveToDir(new Vector2((closestAllyTransform.position.x - playerCollider.transform.position.x),
-                    (closestAllyTransform.position.y - playerCollider.transform.position.y)));
-            }
-            else if(!IsStunned && closestAllyTransform == null)
-                MoveToDir(GetAwayFromPlayerDir(playerCollider));
         }
     }
 
@@ -205,18 +189,22 @@ public class RangeAI : Enemy
 
     public override void AlertAllEnemies()
     {
-      
+        throw new System.NotImplementedException();
     }
 
     public override void Attack(Vector2 aimDir)
     {
-
+        throw new System.NotImplementedException();
     }
 
-  
+    public override void Move()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void UpdateQuest()
     {
-
+        throw new System.NotImplementedException();
     }
 
 }
