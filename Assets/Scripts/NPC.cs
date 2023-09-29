@@ -11,7 +11,7 @@ public abstract class NPC : Actor
     [SerializeField]
     private int questID;
 
-    public void StartConvo() { throw new System.NotImplementedException(); }
+    public abstract void StartConvo();
     public abstract void UpdateQuest();
 
 }
