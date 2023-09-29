@@ -14,6 +14,7 @@ public class Turret : Enemy
     [SerializeField] float atkCooldown = 3f;
     [SerializeField] float fireRate = 1f / 5f;
     [SerializeField] float burstAmount = 5;
+    [SerializeField] AudioSource lazerBeamAudio;
     private bool inCoolDown;
     private Vector2 aimDir;
     IEnumerator ShootBurst()
@@ -28,7 +29,8 @@ public class Turret : Enemy
                         Position,
                         Quaternion.identity);
             aimDir = new Vector2(playerCollider.transform.position.x - transform.position.x, playerCollider.transform.position.y - transform.position.y);
-            projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * projectileSpeed; 
+            projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * projectileSpeed;
+            lazerBeamAudio.Play();
             yield return new WaitForSeconds(fireRate);
         }
         yield return new WaitForSeconds(Random.Range(atkCooldown - .5f, atkCooldown + .5f));

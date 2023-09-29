@@ -483,14 +483,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6836612355566500345, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: m_Volume
-      value: 0.238
-      objectReference: {fileID: 0}
-    - target: {fileID: 6836612355566500345, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7556285220517116567, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: mousePos
       value: 
