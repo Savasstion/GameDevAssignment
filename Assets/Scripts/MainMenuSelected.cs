@@ -17,11 +17,6 @@ public class MainMenuSelected : MonoBehaviour
         
     }
 
-    public void Continue()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
-    }
-
     public void NewGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 7);
