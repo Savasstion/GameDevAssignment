@@ -590,7 +590,7 @@ Transform:
   - {fileID: 662330610376790930}
   - {fileID: 8686783529126194042}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2768303061064876514
 SpriteRenderer:
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c03db7d58956749a13613c17a70f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacking: 0
+  attacking: 1
   attackArea: {fileID: 2869575075254601189}
   timeToAttack: 0.25
   isInvulnerable: 0
