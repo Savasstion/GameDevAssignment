@@ -234,8 +234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.158004, y: -458.38654}
-  m_SizeDelta: {x: 1615.1567, y: 163.2268}
+  m_AnchoredPosition: {x: 13.158004, y: -453.17545}
+  m_SizeDelta: {x: 1615.1567, y: 173.649}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072847725
 MonoBehaviour:
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_text: 'Raine : "You''ve seen their darkness, Hiroshi. We must save these people."
 
     Hiroshi:
-    "I won''t let them escape justice!"'
+    "I won''t let them escape justice! Let''s start our plan Raine."'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad2a6b2bf5c0a6c499dbd159747c85f5, type: 2}
   m_sharedMaterial: {fileID: 602766958631568126, guid: ad2a6b2bf5c0a6c499dbd159747c85f5, type: 2}
