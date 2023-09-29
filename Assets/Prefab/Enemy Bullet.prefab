@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 2473354954034900018}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &1711525966370788776
 SpriteRenderer:

@@ -367,6 +367,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 642020246194998662}
+  - {fileID: 795182147474146046}
   m_Father: {fileID: 1680443638623858194}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -384,9 +385,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeCursorState: 0
   aoeCastState: 0
-  skillSlot: 0
+  skillSlot: 3
   equippedSkills: []
   grenade: {fileID: 530358264402624743}
+  healSelf: {fileID: 2020343568630900601}
 --- !u!1 &4401161898380324691
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +551,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7556285220517116567}
+--- !u!1 &7856750545771373422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795182147474146046}
+  - component: {fileID: 2020343568630900601}
+  m_Layer: 0
+  m_Name: HealSelf Skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &795182147474146046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856750545771373422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 662330610376790930}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2020343568630900601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7856750545771373422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0463f0addd30ed41bf931cca402292e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillCastTime: 0
+  skillCastCost: 1
+  skillCastDelayTime: 0
+  isUnlock: 1
+  expCost: 5
+  playerGameObj: {fileID: 9108675271459903759}
+  healAmount: 25
 --- !u!1 &9108675271459903759
 GameObject:
   m_ObjectHideFlags: 0

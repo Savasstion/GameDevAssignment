@@ -6,10 +6,6 @@ using UnityEngine.EventSystems;
 public class EnemyBullet : Bullet
 {
 
-    private void Start()
-    {
-        Destroy(gameObject, 5f);
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,11 +15,11 @@ public class EnemyBullet : Bullet
             Health health = collision.gameObject.GetComponent<Health>();
             health.Damage(Damage);
             Debug.Log("Damage Dealt");
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         
             

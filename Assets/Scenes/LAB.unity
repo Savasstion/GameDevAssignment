@@ -14803,21 +14803,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet
       objectReference: {fileID: 0}
-    - target: {fileID: 2922570352624338083, guid: 87c64c3965d8d564494ab32ef195d978, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6948511243901088989, guid: 87c64c3965d8d564494ab32ef195d978, type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6948511243901088989, guid: 87c64c3965d8d564494ab32ef195d978, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.12
+      value: -23.17
       objectReference: {fileID: 0}
     - target: {fileID: 6948511243901088989, guid: 87c64c3965d8d564494ab32ef195d978, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.98
+      value: 28.13
       objectReference: {fileID: 0}
     - target: {fileID: 6948511243901088989, guid: 87c64c3965d8d564494ab32ef195d978, type: 3}
       propertyPath: m_LocalPosition.z
