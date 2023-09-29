@@ -28,24 +28,24 @@ public class PauseMenuScript : MonoBehaviour
     //}
     public void Setting()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene("SettingMenu");
     }
 
     public void BackTMMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        SceneManager.LoadScene("Start Menu");
     }
 
 
     public void Quit()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+        SceneManager.LoadScene("ComfirmQuit");
         
     }
 
     public void ConfirmQuit()
     {
-
+        Application.Quit();
     }
 
 }
