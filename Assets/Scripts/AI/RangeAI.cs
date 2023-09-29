@@ -10,7 +10,7 @@ public class RangeAI : Enemy
     [SerializeField] float runAwayThreshold;
 
     //obstaclesLayerMask put both Obstacle and Player layer
-    [SerializeField]  LayerMask obstaclesLayerMask, playerLayerMask, enemyLayerMask;
+    [SerializeField] LayerMask obstaclesLayerMask, playerLayerMask, enemyLayerMask;
     [SerializeField] float unitsToHideBehindEnemy;
     [SerializeField] Vector2 playerDir;
     Collider2D playerCollider;
@@ -35,7 +35,7 @@ public class RangeAI : Enemy
                         Position,
                         Quaternion.identity);
             playerDir = new Vector2(playerCollider.transform.position.x - transform.position.x, playerCollider.transform.position.y - transform.position.y);
-            projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = playerDir.normalized * projectileSpeed ; 
+            projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = playerDir.normalized * projectileSpeed;
             yield return new WaitForSeconds(fireRate);
         }
         yield return new WaitForSeconds(Random.Range(atkCooldown - .5f, atkCooldown + .5f));
@@ -113,14 +113,14 @@ public class RangeAI : Enemy
     //        closestAllyTransform.position.y - playerCollider.transform.position.y).normalized * unitsToHideBehindEnemy;
     //}
 
-    Vector2 GetAwayFromPlayerDir(Collider2D playerCollider) 
+    Vector2 GetAwayFromPlayerDir(Collider2D playerCollider)
     {
         return new Vector2(transform.position.x - playerCollider.transform.position.x, transform.position.y - playerCollider.transform.position.y).normalized;
 
 
     }
 
-    Transform DetectAllies() 
+    Transform DetectAllies()
     {
         List<Collider2D> colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange).ToList();
 
@@ -158,7 +158,7 @@ public class RangeAI : Enemy
         }
     }
 
-    void DetectPlayerCollider() 
+    void DetectPlayerCollider()
     {
         Transform playerTransform = null;
         List<Collider2D> colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange).ToList();

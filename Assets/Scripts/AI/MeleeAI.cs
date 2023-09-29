@@ -62,14 +62,14 @@ public class MeleeAI : Enemy
 
     private void FixedUpdate()
     {
-        
 
-           
+
+
         if (!CheckIfDefeated())
-        { 
+        {
             Move();
 
-            if ((player.position - transform.position).magnitude <= (atkRange) 
+            if ((player.position - transform.position).magnitude <= (atkRange)
                 && !isAllowedDodge
                 && allowedToAttack)
             {
@@ -90,7 +90,7 @@ public class MeleeAI : Enemy
                     Attacking = false;
                     AttackArea.SetActive(Attacking);
                     allowedToAttack = false;
-                    
+
                 }
 
             }
@@ -120,14 +120,14 @@ public class MeleeAI : Enemy
     }
 
 
-    private void PerformDetection() 
+    private void PerformDetection()
     {
-        for(int i = 0; i < detectors.Count; i++) 
+        for (int i = 0; i < detectors.Count; i++)
         {
             detectors[i].Detect(aiData);
         }
 
-        
+
     }
 
     public override void Move()
@@ -168,7 +168,7 @@ public class MeleeAI : Enemy
                     StartCoroutine(DashFeedback());
                     Dash(directionToPlayer);
 
-                    
+
 
                     IsInvulnerable = false;
                     isAllowedDodge = false;
@@ -200,11 +200,11 @@ public class MeleeAI : Enemy
         Debug.Log("Set Allow Dodge True");
     }
 
-    
 
-    IEnumerator DashFeedback() 
+
+    IEnumerator DashFeedback()
     {
-    this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
         yield return new WaitForSeconds(.5f);
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
