@@ -181,8 +181,10 @@ public class Player : Actor
         }
 
         //line 69 also got animation variable
-        Animator.SetFloat("playerDir", AimDir.x);
+        Animator.SetFloat("playerDir", (int)AimDir.x);
         Animator.SetInteger("xVelocity", (int)Rb.velocity.x);
+
+        //Debug.Log(AimDir.x);
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
         Rb.velocity = MoveDir * MoveSpeed;
