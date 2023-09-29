@@ -58,7 +58,20 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-
+    IEnumerator healFeedback()
+    {
+        this.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.green;
+        yield return new WaitForSeconds(.1f);
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+    }
     public void Heal(float amount)
     {
         if (amount < 0)
@@ -76,6 +89,8 @@ public class Health : MonoBehaviour
         {
             this.hp += amount;
         }
+
+        StartCoroutine(healFeedback());
     }
 
     private void Die()

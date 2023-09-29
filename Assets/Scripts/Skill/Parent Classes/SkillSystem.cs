@@ -17,10 +17,13 @@ public class SkillSystem : MonoBehaviour
     public List<Skill> equippedSkills;
     [SerializeField]
     private GrenadeSkill grenade;
+    [SerializeField]
+    private HealSelf healSelf;
 
     private void Start()
     {
         equippedSkills.Add(grenade);
+        equippedSkills.Add(healSelf);
     }
 
     private void Update()
@@ -30,8 +33,8 @@ public class SkillSystem : MonoBehaviour
             Debug.Log("1 Pressed");
             equippedSkills[0].CastSkill();
         }
-        //else if (Input.GetKeyDown(KeyCode.Alpha2))
-        //    equippedSkills[1].CastSkill();
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            equippedSkills[1].CastSkill();
         //else if (Input.GetKeyDown(KeyCode.Alpha3))
         //    equippedSkills[2].CastSkill();
         //else if (Input.GetKeyDown(KeyCode.Alpha4))
