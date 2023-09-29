@@ -66,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 7525740590438552805}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8442622327686566522
 SpriteRenderer:
@@ -157,7 +157,7 @@ MonoBehaviour:
   gunBarrel: {fileID: 7525740590438552805}
   detectionRange: 40
   projectileSpeed: 5
-  atkCooldown: 2.5
+  atkCooldown: 1
   fireRate: 0.06666667
   burstAmount: 5
 --- !u!50 &3845703094944089415

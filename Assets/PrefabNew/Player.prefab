@@ -814,9 +814,9 @@ MonoBehaviour:
   dashCoolDownTime: 1.5
   audioSource: {fileID: 1467951013371033103}
   mousePos: {fileID: 0}
-  projectile: {fileID: 0}
+  projectile: {fileID: 2922570352624338083, guid: a7cbea5c735bb7946b7444998fbadffe, type: 3}
   projectileSpeed: 15
-  atkCooldown: 0.2
+  atkCooldown: 1
   iFrameDuration: 1.5
 --- !u!82 &1467951013371033103
 AudioSource:

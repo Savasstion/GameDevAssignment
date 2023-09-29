@@ -15,11 +15,14 @@ public class EnemyBullet : Bullet
             Health health = collision.gameObject.GetComponent<Health>();
             health.Damage(Damage);
             Debug.Log("Damage Dealt");
+            Destroy(gameObject.transform.parent.gameObject);
 
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
+            Destroy(gameObject.transform.parent.gameObject);
 
+            
         }
         
             

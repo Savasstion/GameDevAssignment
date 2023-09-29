@@ -16,9 +16,11 @@ public class PlayerBullet : Bullet
             health.Damage(Damage);
             Debug.Log("Damage Dealt");
 
+
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
+            Destroy(gameObject.transform.parent.gameObject);
 
         }
 
