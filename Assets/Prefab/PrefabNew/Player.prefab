@@ -390,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aoeCursorState: 0
   aoeCastState: 0
-  skillSlot: 5
+  skillSlot: 10
   equippedSkills: []
   grenade: {fileID: 530358264402624743}
   healSelf: {fileID: 3958124952145558278}
@@ -759,7 +759,7 @@ Transform:
   - {fileID: 662330610376790930}
   - {fileID: 8686783529126194042}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2768303061064876514
 SpriteRenderer:

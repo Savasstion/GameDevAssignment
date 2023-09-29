@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     private float hp = 100;
     [SerializeField]
     private float maxHP = 100;
+    [SerializeField]
+    GameObject levelChecker;
 
     private void Start()
     {
@@ -98,6 +100,7 @@ public class Health : MonoBehaviour
     {
         this.GetComponent<SpriteRenderer>().color = Color.red;
         Debug.Log("Dies");
+        levelChecker.GetComponent<CheckCleared>().EnemiesCleared += 1;
         gameObject.GetComponent<Actor>().EnterDefeatState();
     }
 }

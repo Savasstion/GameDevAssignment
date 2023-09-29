@@ -13,7 +13,7 @@ public class RangeAI : Enemy
     [SerializeField] LayerMask obstaclesLayerMask, playerLayerMask, enemyLayerMask;
     [SerializeField] float unitsToHideBehindEnemy;
     [SerializeField] Vector2 playerDir;
-    Collider2D playerCollider;
+    [SerializeField] Collider2D playerCollider;
     Transform closestAllyTransform;
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileSpeed = 1;
@@ -44,7 +44,7 @@ public class RangeAI : Enemy
 
     void Start()
     {
-        InvokeRepeating(nameof(DetectPlayerCollider), 0, 0);
+        //InvokeRepeating(nameof(DetectPlayerCollider), 0, 0);
     }
 
 
@@ -158,32 +158,32 @@ public class RangeAI : Enemy
         }
     }
 
-    void DetectPlayerCollider()
-    {
-        Transform playerTransform = null;
-        List<Collider2D> colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange).ToList();
+    //void DetectPlayerCollider()
+    //{
+    //    Transform playerTransform = null;
+    //    List<Collider2D> colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange).ToList();
 
-        for (int i = 0; i < colliders.Count; i++)
-        {
-            if ((1 << (colliders[i].gameObject.layer) & playerLayerMask) != 0)
-            {
-                playerTransform = colliders[i].transform;
-                break;
-            }
-        }
+    //    for (int i = 0; i < colliders.Count; i++)
+    //    {
+    //        if ((1 << (colliders[i].gameObject.layer) & playerLayerMask) != 0)
+    //        {
+    //            playerTransform = colliders[i].transform;
+    //            break;
+    //        }
+    //    }
 
-        if (playerTransform == null)
-            return;
+    //    if (playerTransform == null)
+    //        return;
 
-        Vector2 directionToPlayer = new Vector2(playerTransform.position.x - transform.position.x, playerTransform.position.y - transform.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, detectionRange, obstaclesLayerMask);
+    //    Vector2 directionToPlayer = new Vector2(playerTransform.position.x - transform.position.x, playerTransform.position.y - transform.position.y);
+    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, detectionRange, obstaclesLayerMask);
 
-        if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
-            playerCollider = hit.collider;
-        else
-            playerCollider = null;
+    //    if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+    //        playerCollider = hit.collider;
+    //    else
+    //        playerCollider = null;
 
-    }
+    //}
 
 
 

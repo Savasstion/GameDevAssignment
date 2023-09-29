@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class Turret : Enemy
 {
+    //[SerializeField] Transform playerTransform;
     [SerializeField] GameObject projectile;
     [SerializeField] LayerMask playerLayerMask, obstaclesLayerMask; //obstaclesLayerMask should be both player and obstacles
     [SerializeField] Transform gunBarrel;
-     Collider2D playerCollider;
+    [SerializeField] Collider2D playerCollider;
     [SerializeField] float detectionRange, projectileSpeed = 1;
     [SerializeField] float atkCooldown = 3f;
     [SerializeField] float fireRate = 1f / 5f;
@@ -49,7 +50,7 @@ public class Turret : Enemy
     {
         inCoolDown = false;
         IsStunned = false;
-        InvokeRepeating(nameof(DetectPlayerCollider), 0, 0);
+        //InvokeRepeating(nameof(DetectPlayerCollider), 0, 0);
        
     }
     public override void Attack(Vector2 aimDir)
@@ -80,32 +81,32 @@ public class Turret : Enemy
             }
         }
     }
-    void DetectPlayerCollider()
-    {
-        Transform playerTransform = null;
-        List<Collider2D> colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange).ToList();
+    //void DetectPlayerCollider()
+    //{
+    //    //Transform playerTransform = null;
+    //    //List<Collider2D> colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange).ToList();
 
-        for (int i = 0; i < colliders.Count; i++)
-        {
-            if ((1 << (colliders[i].gameObject.layer) & playerLayerMask) != 0)
-            {
-                playerTransform = colliders[i].transform;
-                break;
-            }
-        }
+    //    //for (int i = 0; i < colliders.Count; i++)
+    //    //{
+    //    //    if ((1 << (colliders[i].gameObject.layer) & playerLayerMask) != 0)
+    //    //    {
+    //    //        playerTransform = colliders[i].transform;
+    //    //        break;
+    //    //    }
+    //    //}
 
-        if (playerTransform == null)
-            return;
+    //    if (playerTransform == null)
+    //        return;
 
-        Vector2 directionToPlayer = new Vector2(playerTransform.position.x - transform.position.x, playerTransform.position.y - transform.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, detectionRange, obstaclesLayerMask);
+    //    Vector2 directionToPlayer = new Vector2(playerTransform.position.x - transform.position.x, playerTransform.position.y - transform.position.y);
+    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, detectionRange, obstaclesLayerMask);
 
-        if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
-            playerCollider = hit.collider;
-        else
-            playerCollider = null;
+    //    if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+    //        playerCollider = hit.collider;
+    //    else
+    //        playerCollider = null;
 
-    }
+    //}
 
 
     public override void AlertAllEnemies()
