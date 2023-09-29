@@ -432,10 +432,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 530358264402624743, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: grenade
-      value: 
-      objectReference: {fileID: 7801646061214639442, guid: abec3cc30756a884b803ec9520300607, type: 3}
-    - target: {fileID: 530358264402624743, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: skillPos
       value: 
       objectReference: {fileID: 163640440}
@@ -443,10 +439,6 @@ PrefabInstance:
       propertyPath: explosions
       value: 
       objectReference: {fileID: 313895227}
-    - target: {fileID: 530358264402624743, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
-      propertyPath: skillCastDelayTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1680443638623858194, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -489,6 +481,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1680443638623858194, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836612355566500345, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
+      propertyPath: m_Volume
+      value: 0.238
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836612355566500345, guid: 187ddf4408802764991c723df0b9e92e, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7556285220517116567, guid: 187ddf4408802764991c723df0b9e92e, type: 3}

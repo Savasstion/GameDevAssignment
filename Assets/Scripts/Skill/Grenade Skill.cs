@@ -16,6 +16,7 @@ public class GrenadeSkill : PlacementSkill
 
     private int amountExploded = 0;
     public GameObject explosions;
+    public AudioSource explosionAudio;
 
     IEnumerator ExplodeAfterDelay()
     {
@@ -39,7 +40,10 @@ public class GrenadeSkill : PlacementSkill
                         Quaternion.identity);
             Vector2 aimDir = new Vector2(contactPoint.x - transform.position.x, contactPoint.y - transform.position.y);
 
+        //who knew those secondary school physics formula is actually useful
+        // velocity = displacement / time;
         float speed = aimDir.magnitude / SkillCastDelayTime;
+        
 
             projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = aimDir.normalized * speed;
 
@@ -107,7 +111,7 @@ public class GrenadeSkill : PlacementSkill
         IEnumerator triggerExploion()
         {
             explosions.transform.GetChild(amountExploded).gameObject.SetActive(true);
-
+            explosionAudio.Play();
             int buffer = amountExploded;
             yield return new WaitForSeconds(.5f);
             explosions.transform.GetChild(buffer).gameObject.SetActive(false);
