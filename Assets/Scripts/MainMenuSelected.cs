@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuSelected : MonoBehaviour
 {
-    public string backGuide;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +43,4 @@ public class MainMenuSelected : MonoBehaviour
         Application.Quit();
     }
 
-    public void BackGuide()
-    {
-        SceneManager.LoadScene(backGuide);
-    }
 }

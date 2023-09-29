@@ -42,28 +42,26 @@ public class Player : Actor
     public bool IsAllowedDodge { get => isAllowedDodge; set => isAllowedDodge = value; }
     public Vector2 AimDir { get => aimDir; set => aimDir = value; }
     public float iFrameDuration;
-    
+
     public new void BecomeVulnerable()
     {
         IsInvulnerable = false;
         CancelInvoke("BecomeVulnerable");
     }
 
-    public IEnumerator MakeInvulnerableAfterDamaged() 
+    public IEnumerator MakeInvulnerableAfterDamaged()
     {
-        IsInvulnerable = true; 
+        IsInvulnerable = true;
         yield return new WaitForSeconds(iFrameDuration);
         IsInvulnerable = false;
     }
 
-    void Start() 
+    void Start()
     {
-        
+
 
         IsInvulnerable = false;
         //audioSource = GetComponent<AudioSource>();
-        Rb.velocity = Vector2.zero;
-
 
 
 
@@ -78,7 +76,7 @@ public class Player : Actor
 
     private void Update()
     {
-        if(Application.targetFrameRate != 60)
+        if (Application.targetFrameRate != 60)
             Application.targetFrameRate = 60;
 
         //userInput
@@ -135,15 +133,15 @@ public class Player : Actor
 
     // Update is called once per frame
     void FixedUpdate()
-    { 
+    {
 
         Move();
 
-   
-    }
-    
 
- 
+    }
+
+
+
 
     public override void Move()
     {
@@ -156,16 +154,16 @@ public class Player : Actor
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        
 
 
-        
+
+
 
         //if looking right and clicked left(flip to the left)
         //if (faceRight && horizontalInput < 0)
-        if(AimDir.x < 0)
+        if (AimDir.x < 0)
         {
-            transform.localScale = new Vector3( -(Mathf.Abs(transform.localScale.x)), transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-(Mathf.Abs(transform.localScale.x)), transform.localScale.y, transform.localScale.z);
 
             faceRight = false;
 
@@ -183,17 +181,17 @@ public class Player : Actor
         }
 
         //line 69 also got animation variable
-        Animator.SetInteger("playerDir", (int)AimDir.x);
+        Animator.SetFloat("playerDir", AimDir.x);
         Animator.SetInteger("xVelocity", (int)Rb.velocity.x);
 
         MoveDir = new Vector2(horizontalInput, verticalInput).normalized;
         Rb.velocity = MoveDir * MoveSpeed;
-        
+
     }
 
 
 
-    public override void Attack(Vector2 aimDir) 
+    public override void Attack(Vector2 aimDir)
     {
         //if using range weapons then need to use attackDr
         Animator.SetTrigger("Attack");
@@ -203,7 +201,7 @@ public class Player : Actor
         //List<Collider2D> enemyColliders = equippedWeapon.GetEnemyCollider(equippedWeapon.AttackCollider);
 
 
-        
+
 
         Attacking = true;
         AttackArea.SetActive(Attacking);
@@ -218,17 +216,15 @@ public class Player : Actor
         Debug.Log(dashCount);
     }
 
-    public void HitFeedback() 
+    public void HitFeedback()
     {
         StartCoroutine(StartBlinking());
     }
 
-
-
-    IEnumerator StartBlinking() 
+    IEnumerator StartBlinking()
     {
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        yield return new WaitForSeconds(iFrameDuration/9f);
+        yield return new WaitForSeconds(iFrameDuration / 9f);
         this.GetComponent<SpriteRenderer>().color = Color.white;
         yield return new WaitForSeconds(iFrameDuration / 9f);
         this.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);

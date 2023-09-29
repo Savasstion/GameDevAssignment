@@ -8,6 +8,7 @@ public class Turret : Enemy
 {
     [SerializeField] GameObject projectile;
     [SerializeField] LayerMask playerLayerMask, obstaclesLayerMask; //obstaclesLayerMask should be both player and obstacles
+    [SerializeField] Transform gunBarrel;
      Collider2D playerCollider;
     [SerializeField] float detectionRange, projectileSpeed = 1;
     [SerializeField] float atkCooldown = 3f;
@@ -51,8 +52,9 @@ public class Turret : Enemy
     }
     public override void Attack(Vector2 aimDir)
     {
-
-        throw new System.NotImplementedException();
+ 
+        var projectileInstance = Instantiate(projectile, gunBarrel.position, gunBarrel.rotation);
+        projectileInstance.gameObject.GetComponent<Rigidbody2D>().velocity = (aimDir.normalized * projectileSpeed );
     }
 
     // Update is called once per frame
