@@ -14,7 +14,7 @@ public class RepellSkill : PlacementSkill
 
     public override void CastSkill()
     {
-        Collider2D[] enemyCollider = getEnemyCollider();
+        Collider2D[] enemyCollider = getEnemyCollider(SkillPos.position);
         Transform posCache;
 
         Debug.Log(enemyCollider.Length);
