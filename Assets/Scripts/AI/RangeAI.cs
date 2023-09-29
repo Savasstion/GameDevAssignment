@@ -56,6 +56,7 @@ public class RangeAI : Enemy
         else
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
+        Rb.velocity = Vector3.zero;
 
         if (!CheckIfDefeated())
         {

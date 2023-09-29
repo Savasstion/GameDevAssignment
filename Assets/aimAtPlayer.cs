@@ -9,6 +9,7 @@ public class aimAtPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(player != null)
         transform.right = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
     }
 }

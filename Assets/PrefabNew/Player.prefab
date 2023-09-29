@@ -337,8 +337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d684a2d3ecffe46b6b1887dd7f8c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
-  sword: {fileID: 0}
 --- !u!1 &4314023952289882508
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +565,7 @@ GameObject:
   - component: {fileID: 7556285220517116567}
   - component: {fileID: 1467951013371033103}
   - component: {fileID: 8047602352380067378}
+  - component: {fileID: 2543426643525562656}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -872,3 +871,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHP: 100
+--- !u!114 &2543426643525562656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108675271459903759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00d47009ce448142a6b634bf3974f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canReceiveInput: 1
+  inputReceived: 1
